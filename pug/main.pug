@@ -1,0 +1,84 @@
+include common/_mixins
+include common/_settings
+block variables
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        meta(content="ie=edge" http-equiv="x-ua-compatible")
+        meta(content="width=device-width, initial-scale=1" name="viewport")
+
+        title Portfolio | #{title}
+        link(rel='stylesheet' href='css/vendor.min.css')
+        link(rel='stylesheet' href='css/main.css')
+        // Для изменений после верстки
+        link(rel='stylesheet' href='css/custom.css')
+
+        link(rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png")
+        link(rel="manifest" href="images/favicon/site.webmanifest")
+        meta(name="msapplication-TileColor" content="#da532c")
+        meta(name="theme-color" content="#ffffff")
+    body
+        .wrapper
+            //- heeader
+            header.header
+                .container.header__container
+                    a(href='/').header__logo
+                        +image('images/icons/logo.png')
+                    .header__metro
+                        .metro
+                            .metro__img
+                                +image('images/icons/metro.png')
+                            .metro__list
+                                .metro__item Люблино 0,8км
+                                .metro__item Братиславская 1,5км
+                                .metro__item Марьино 2,9км
+
+
+                    .header__time
+                        | Работаем ежедневно
+                        br
+                        | с 10:00 до 21:00
+                    .header__contacts
+                        a(href='tel:+7(495)088-27-88').tel.header__tel +7 (495) 088-27-88
+                        button(type='button').header__call.jsCall Заказать звонок
+            //- pages
+            .page
+                block content
+
+            //- footer
+            footer.footer
+
+        .debug
+            div
+                div
+                    div
+                    div
+                    div
+                    div
+                    div
+                    div
+                    div
+                    div
+                    div
+                    div
+                    div
+                    div
+                    div
+                    div
+                    div
+                    div
+                    div
+                    div
+                    div
+                    div
+
+
+
+        script(src='js/vendor.min.js')
+        script(src='js/main.min.js')
+        // Для изменений после верстки
+        script(src='js/custom.js')

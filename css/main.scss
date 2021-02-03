@@ -1,0 +1,37 @@
+//variables
+//fonts
+$font: 'Gilroy', Arial, sans-serif;
+
+//colors
+$text: #3e3e3e;
+$bg: #ffffff;
+$btn: #e79089;
+$green: #259595;
+
+//another
+$font-size: 16px;
+
+//layout
+@import "layout/mixins";
+@import "layout/fonts";
+@import "layout/smart-grid";
+@import "layout/adjustment";
+@import "layout/common";
+
+//sections
+@import "sections/header";
+@import "sections/index";
+@import "sections/banner";
+@import "sections/att";
+@import "sections/how";
+@import "sections/steps";
+@import "sections/what";
+@import "sections/booking";
+@import "sections/price";
+@import "sections/footer";
+
+.debug {
+  //@include debug(rgba(0,0,0,0.3), 1px solid red);
+  //z-index: 100;
+  //top: 0;
+}
