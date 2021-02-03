@@ -53,7 +53,6 @@
         },
     });
 
-
     window.swiperPrice = swiperPrice;
 
     $('.pcomp__item').on('click', function (e){
