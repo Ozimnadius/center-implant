@@ -164,44 +164,7 @@ block content
                             .steps__stab.stab.jsTab Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque corporis debitis, explicabo laborum odio provident recusandae! Ea eius esse fugit illo iusto modi nam optio perspiciatis sed ut! Consequatur, deserunt et! Architecto at consequuntur id, incidunt nesciunt saepe veniam! Alias.
         //- what
         section.index__what
-            .what
-                .container
-                    .what__grid
-                        .what__left
-                            h2.what__title Что вас ждёт на бесплатном осмотре у имплантолога:
-                            ul.what__ul
-                                each i in ['Подбор импланта, который подойдёт вам на 100%','Полное обследование и 3 варианта лечения от ведущих врачей-имплантологов России']
-                                    li.what__li.li= i
-                            .what__tel
-                                | Звоните круглосуточно&nbsp;
-                                a(href='tel:+7(495)186-22-41') +7 (495) 186-22-41
-                                br
-                                | или оставьте заявку, мы вам перезвоним
-                            form.what__form
-                                .what__accept
-                                    label.accept
-                                        input(type='checkbox' name='accept' checked).accept__input
-                                        span.accept__fake
-                                            span.accept__checkbox
-                                                <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M1.11188 4.01801L4.07938 6.98426L10.0119 1.05176" stroke="#E79089" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                                </svg>
-                                            span.accept__txt.what__accept-txt Нажимая кнопку "Записаться на просмотр", даю согласие на обработку моих персональных данных
-
-
-
-                                .what__fields
-                                    .what__field
-                                        input(type='tel' name='tel' placeholder='Номер телефона').what__input
-                                    .what__field
-                                        button(type='submit').what__submit.btn ЗАПИСАТЬСЯ НА ПРОСМОТР
-                        .what__right
-                            a(href='https://www.youtube.com/watch?v=_sI_Ps7JSEk' data-fancybox).what__yt
-                                +image('https://img.youtube.com/vi/_sI_Ps7JSEk/hqdefault.jpg')
-                                span.what__btn
-                                    <svg width="19" height="23" viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M19 11.5L0.250001 22.3253L0.250002 0.674682L19 11.5Z" fill="white"/>
-                                    </svg>
+            +what()
         //- booking
         section.index__booking
             .container
@@ -296,5 +259,503 @@ block content
                                 <path d="M50 50C50 22.3858 27.6142 -5.67237e-06 -1.2557e-05 -3.25826e-06L-3.8147e-06 100C27.6142 100 50 77.6142 50 50Z" fill="#E79089"/>
                                 <path d="M17 62L28 50.5L17 39" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
+        //- cert&comps
+        section.index__third
+            .container
+                .index__cert
+                    .cert
+                        .cert__grid
+                            h2.cert__title
+                                | Клиника Империя одобрена
+                                br
+                                | мировым лидером имплантации Nobel Biocare!
+                            .cert__sub Чтобы официально использовать импланты Nobel Zygoma, клиника должна соответствовать трём критериям:
+                            .cert__list
+                                each i in ['Процент успешных операций должен составлять 98-99%','Обучение врачей за рубежом минимум 2 раза в год','Самые передовые технологии и оборудование в клинике']
+                                    .cert__item
+                                        <svg width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.673545 18.4097C0.673545 18.4097 2.2484 16.8348 4.27321 17.2848C6.523 17.9597 8.32283 19.3096 9.67271 20.8844C11.0226 22.2343 11.4725 24.2591 11.4725 24.2591C11.4725 24.2591 17.9969 15.035 23.3964 9.41052C28.346 4.236 33.0705 1.08629 33.7455 0.636337C34.4204 0.186379 35.0953 -0.263579 35.5453 0.186379C35.9952 0.636337 36.4452 1.31127 35.9952 1.76123C35.5453 2.21119 28.7959 10.3104 25.1963 15.035C21.1466 20.4345 18.8968 25.384 15.0722 31.2335C14.1723 32.8083 11.6975 36.183 9.89768 35.958C9.44773 35.958 7.87287 31.0085 7.42292 29.8836C6.07304 27.8588 4.49819 24.7091 1.57346 21.7844C0.223587 20.4345 -0.676329 19.7595 0.673545 18.4097Z" fill="#E79089"/>
+                                        </svg>
+                                        span Обучение врачей за рубежом минимум 2 раза в год
+                            .cert__img
+                                +image('images/content/cert/img.jpg')
+                        .cert__txt Стоматология Империя — одна из 5 сертифицированных клиник в России, официально применяющих импланты Nobel Zygoma.
+                .index__comps
+                    .comps
+                        h2.comps__title Клиника Империя работает со всеми мировыми производителями имплантатов
+                        .comps__sub Более 30 производителей
+                        .comps__list
+                            each i in [1,2,3,4,5,6,7]
+                                a(href='/').comps__item
+                                    +image('images/content/comps/' + i + '.jpg')
+        //- advants
+        section__advants
+            .advants
+                .container
+                    h2.advants__title Мы дорожим репутацией и делаем свою работу первоклассно!
+                    .advants__sub Мы дорожим репутацией и делаем свою работу первоклассно!
+                    .advants__list
+                        each i,x in advantsList
+                            .advants__item.aitem
+                                .aitem__img
+                                    +image('images/content/advants/' + (x + 1) + '.svg')
+                                .aitem__title= i.title
+                                .aitem__txt!= i.txt
+        //- results
+        section.index__results
+            .results
+                - var arr = [1,2,3,4,5,6,7,8,9]
+                .container
+                    .results__top
+                        h2.results__title Мы добиваемся 100% приживаемости импланта
+                        .results__count 9 841
+                        .results__txt
+                            b человек
+                            br
+                            | воспользовались услугой
+                            br
+                            |
+                            | имплантации в 2020 году
+                    .results__thumbs
+                        .rthumbs
+                            .rthumbs__container.swiper-container
+                                .swiper-wrapper
+                                    each i in arr
+                                        .swiper-slide.rthumbs__item
+                                            +image('images/content/results/' + i + '.jpg')
+
+                            .rthumbs__nav
+                                button(type='button').rthumbs__btn.rthumbs__prev
+                                    <svg width="33" height="66" viewBox="0 0 33 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M-5.7699e-06 33C-8.95653e-06 51.2254 14.7746 66 33 66L33 5.7699e-06C14.7746 2.58327e-06 -2.58327e-06 14.7746 -5.7699e-06 33Z" fill="#E79089"/>
+                                    <path d="M21.78 25.0801L14.52 32.6701L21.78 40.2601" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                button(type='button').rthumbs__btn.rthumbs__next
+                                    <svg width="33" height="66" viewBox="0 0 33 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M33 33C33 14.7746 18.2254 8.92103e-06 -1.95521e-06 1.05143e-05L3.8147e-06 66C18.2254 66 33 51.2254 33 33Z" fill="#E79089"/>
+                                    <path d="M11.22 40.9199L18.48 33.3299L11.22 25.7399" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+
+                    .results__slider
+                        .rslider.swiper-container
+                            .swiper-wrapper
+                                each i in arr
+                                    .swiper-slide.rslide
+                                        .rslide__grid
+                                            .rslide__left
+                                                .rslide__img
+                                                    +image('images/content/results/img.jpg')
+                                                .rslide__txt “Спасибо большое клинике Империя! Провели всю процедуру имплантации качественно в сроки, с полным сопровождением и консультацией”
+                                            .rslide__right
+                                                h3.rslide__title Андрей, 5#{i} лет
+                                                .rslide__cols
+                                                    .rslide__col.rcol
+                                                        .rcol__img
+                                                            +image('images/content/results/before.jpg')
+                                                        .rcol__txt Частичное отсутствие зубов на каждой челюсти, пародонтоз, оголённые шейки зубов. Физический и эмоциональный дискомфорт из-за адентии.
+                                                    .rslide__col.rcol
+                                                        .rcol__img
+                                                            +image('images/content/results/after.jpg')
+                                                        .rcol__txt Протезирование верхнего и нижнего зубного ряда с использованием передовой швейцарской технологии протезирования на 6 имплантах All-on-6.
+                    .results__info
+                        .rinfo
+                            .rinfo__img
+                                +image('images/content/results/info.png')
+                            .rinfo__desc
+                                | Лечащий врач: Хасянов Дамир Шамилевич, стоматолог-имплантолог ортопед
+                                br
+                                b «Мы часто применяем комплексные решения, не ограничиваясь лишь одним методом восстановления зубов.»
+        //- docs
+        section.index__docs
+            .container
+                .docs
+                    - var arr = [1,2,3,4,5,6]
+                    h2.docs__title Врачи и примеры работ
+                    .docs__tabs.jsTabs
+                        .docs__sws
+                            each i in arr
+                                button(type='button' class=(i == 1) ? 'active' : '').docs__sw.jsSw
+                                    span.docs__sw-img
+                                        +image('images/content/docs/' + i + '.jpg')
+                        .docs__tabs
+                            each tab in arr
+                                div(class=(tab == 1) ? 'active' : '').docs__tab.jsTab
+                                    .dtab
+                                        .dtab__top
+                                            .dtab__left
+                                                .dtab__title Хасянов Дамир Шамилевич#{tab}
+                                            .dtab__right
+                                                .dtab__sub Главный врач клиники ИМПЕРИЯ. Хирург-имплантолог. Ведущий консультирующий специалист по имплантации зубов и направленной костной регенерации.
+                                        .dtab__bottom
+                                            .dtab__left
+                                                .dtab__img
+                                                    +image('images/content/docs/img.jpg')
+                                                .dtab__txt “Провели всю процедуру имплантации качественно в сроки, с полным сопровождением и консультацией. Мы часто применяем комплексные решения, не ограничиваясь лишь одним методом восстановления зубов.”
+                                            .dtab__right
+                                                div(class='dslider_' + tab).dslider.swiper-container
+                                                    .swiper-wrapper
+                                                        each i in [1,2,3]
+                                                            .swiper-slide.dslide
+                                                                .dslide__top
+                                                                    .dslide__grid
+                                                                        .dslide__col
+                                                                            .dslide__title Проблема
+                                                                        .dslide__col
+                                                                            .dslide__title Решение и результат
+                                                                .dslide__bottom
+                                                                    .dslide__week
+                                                                        | 2 недели
+                                                                        br
+                                                                        | срок лечения
+
+                                                                    .dslide__grid
+                                                                        .dslide__col
+                                                                            .dslide__block
+                                                                                button(type='button').dslider__prev.dslide__btn
+                                                                                    <svg width="25" height="50" viewBox="0 0 25 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                    <path d="M-4.37114e-06 25C-6.78526e-06 38.8071 11.1929 50 25 50L25 4.37114e-06C11.1929 1.95703e-06 -1.95703e-06 11.1929 -4.37114e-06 25Z" fill="#E79089"/>
+                                                                                    <path d="M16.4893 19.1494L11.1702 24.7345L16.4893 30.3196" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                                    </svg>
+                                                                                .dslide__img
+                                                                                    +image('images/content/docs/before.jpg')
+
+                                                                            .dslide__txt Частичное отсутствие зубов на каждой челюсти, пародонтоз, оголённые шейки зубов. Физический и эмоциональный дискомфорт из-за адентии.
+                                                                            ul.dslide__ul
+                                                                                each j in ['Не нравилось, как выглядели зубы','Отсутствие зубов в жевательном отделе челюсти','Физический и моральной дискомфорт']
+                                                                                    li.dslide__li.li= j
+                                                                        .dslide__col
+                                                                            .dslide__block
+                                                                                .dslide__img
+                                                                                    +image('images/content/docs/after.jpg')
+                                                                                button(type='button').dslider__next.dslide__btn
+                                                                                    <svg width="25" height="50" viewBox="0 0 25 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                                    <path d="M25 25C25 11.1929 13.8071 -3.72678e-05 -4.05271e-06 -4.0889e-05L-1.71661e-05 50C13.8071 50 25 38.8071 25 25Z" fill="#E79089"/>
+                                                                                    <path d="M8.51062 30.8506L13.8298 25.2655L8.51062 19.6804" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                                                    </svg>
+
+                                                                            .dslide__txt Протезирование верхнего и нижнего зубного ряда с использованием передовой швейцарской технологии протезирования на 6 имплантах All-on-6.
+                                                                            ul.dslide__ul
+                                                                                each j in ['Восстановление отсутствующих зубов с помощью имплантации','Восстановление жевательной функции','Преображение внешнего вида улыбки']
+                                                                                    li.dslide__li.li.li_y= j
+        //- revs
+        section.index__revs
+            .container
+                .revs
+                    h2.revs__title Отзывы о лечении в нашей клинике на независимых порталах
+                    .revs__sub Это самые честные и искренние отзывы наших пациентов. Их невозможно подделать или купить в силу строгой модерации независимых порталов
+                    .revs__rates
+                        .revs__rate.rrate
+                            .rrate__img
+                                +image('images/content/revs/1.png')
+                            .rrate__name Рейтинг
+                            .rrate__rate 4,8 из 5
+                        .revs__rate.rrate
+                            .rrate__img
+                                +image('images/content/revs/2.png')
+                            .rrate__name Рейтинг
+                            .rrate__rate 4,8 из 5
+                        .revs__rate.rrate
+                            .rrate__img
+                                +image('images/content/revs/3.png')
+                            .rrate__name Рейтинг
+                            .rrate__stars
+                                <svg width="113" height="17" viewBox="0 0 113 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0)">
+                                <path d="M16.2179 5.90579L11.2915 5.15328L9.0834 0.449935C8.91847 0.0987196 8.34224 0.0987196 8.17731 0.449935L5.96986 5.15328L1.0435 5.90579C0.638871 5.96789 0.477285 6.45999 0.761062 6.75045L4.33999 10.4188L3.494 15.6049C3.42656 16.0169 3.86658 16.3261 4.23048 16.1238L8.63069 13.692L13.0309 16.1244C13.3915 16.3247 13.8355 16.0216 13.7674 15.6056L12.9214 10.4195L16.5003 6.75111C16.7841 6.45999 16.6218 5.96789 16.2179 5.90579Z" fill="#FFC107"/>
+                                </g>
+                                <g clip-path="url(#clip1)">
+                                <path d="M40.2554 5.90579L35.329 5.15328L33.1209 0.449935C32.956 0.0987196 32.3798 0.0987196 32.2148 0.449935L30.0074 5.15328L25.081 5.90579C24.6764 5.96789 24.5148 6.45999 24.7986 6.75045L28.3775 10.4188L27.5315 15.6049C27.4641 16.0169 27.9041 16.3261 28.268 16.1238L32.6682 13.692L37.0684 16.1244C37.429 16.3247 37.873 16.0216 37.8049 15.6056L36.9589 10.4195L40.5378 6.75111C40.8216 6.45999 40.6594 5.96789 40.2554 5.90579Z" fill="#FFC107"/>
+                                </g>
+                                <g clip-path="url(#clip2)">
+                                <path d="M64.293 5.90579L59.3666 5.15328L57.1585 0.449935C56.9936 0.0987196 56.4173 0.0987196 56.2524 0.449935L54.045 5.15328L49.1186 5.90579C48.714 5.96789 48.5524 6.45999 48.8362 6.75045L52.4151 10.4188L51.5691 15.6049C51.5017 16.0169 51.9417 16.3261 52.3056 16.1238L56.7058 13.692L61.106 16.1244C61.4666 16.3247 61.9106 16.0216 61.8425 15.6056L60.9965 10.4195L64.5754 6.75111C64.8592 6.45999 64.6969 5.96789 64.293 5.90579Z" fill="#FFC107"/>
+                                </g>
+                                <g clip-path="url(#clip3)">
+                                <path d="M88.3305 5.90579L83.4042 5.15328L81.196 0.449935C81.0311 0.0987196 80.4549 0.0987196 80.29 0.449935L78.0825 5.15328L73.1561 5.90579C72.7515 5.96789 72.5899 6.45999 72.8737 6.75045L76.4526 10.4188L75.6066 15.6049C75.5392 16.0169 75.9792 16.3261 76.3431 16.1238L80.7433 13.692L85.1435 16.1244C85.5041 16.3247 85.9481 16.0216 85.88 15.6056L85.034 10.4195L88.613 6.75111C88.8967 6.45999 88.7345 5.96789 88.3305 5.90579Z" fill="#FFC107"/>
+                                </g>
+                                <g clip-path="url(#clip4)">
+                                <path d="M112.368 5.90579L107.442 5.15328L105.234 0.449935C105.069 0.0987196 104.492 0.0987196 104.327 0.449935L102.12 5.15328L97.1937 5.90579C96.789 5.96789 96.6275 6.45999 96.9112 6.75045L100.49 10.4188L99.6442 15.6049C99.5767 16.0169 100.017 16.3261 100.381 16.1238L104.781 13.692L109.181 16.1244C109.542 16.3247 109.986 16.0216 109.918 15.6056L109.072 10.4195L112.65 6.75111C112.934 6.45999 112.772 5.96789 112.368 5.90579Z" fill="#E6E6E6"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0">
+                                <rect width="16.025" height="16.025" fill="white" transform="translate(0.618164 0.173828)"/>
+                                </clipPath>
+                                <clipPath id="clip1">
+                                <rect width="16.025" height="16.025" fill="white" transform="translate(24.6557 0.173828)"/>
+                                </clipPath>
+                                <clipPath id="clip2">
+                                <rect width="16.025" height="16.025" fill="white" transform="translate(48.6933 0.173828)"/>
+                                </clipPath>
+                                <clipPath id="clip3">
+                                <rect width="16.025" height="16.025" fill="white" transform="translate(72.7308 0.173828)"/>
+                                </clipPath>
+                                <clipPath id="clip4">
+                                <rect width="16.025" height="16.025" fill="white" transform="translate(96.7684 0.173828)"/>
+                                </clipPath>
+                                </defs>
+                                </svg>
+
+                        .revs__rate.rrate
+                            .rrate__img
+                                +image('images/content/revs/4.png')
+                            .rrate__name Рейтинг
+                            .rrate__rate 4,8 из 5
+                        .revs__rate.rrate
+                            .rrate__img
+                                +image('images/content/revs/5.png')
+                            .rrate__name Рейтинг
+                            .rrate__stars
+                                <svg width="113" height="17" viewBox="0 0 113 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0)">
+                                <path d="M16.2179 5.90579L11.2915 5.15328L9.0834 0.449935C8.91847 0.0987196 8.34224 0.0987196 8.17731 0.449935L5.96986 5.15328L1.0435 5.90579C0.638871 5.96789 0.477285 6.45999 0.761062 6.75045L4.33999 10.4188L3.494 15.6049C3.42656 16.0169 3.86658 16.3261 4.23048 16.1238L8.63069 13.692L13.0309 16.1244C13.3915 16.3247 13.8355 16.0216 13.7674 15.6056L12.9214 10.4195L16.5003 6.75111C16.7841 6.45999 16.6218 5.96789 16.2179 5.90579Z" fill="#FFC107"/>
+                                </g>
+                                <g clip-path="url(#clip1)">
+                                <path d="M40.2554 5.90579L35.329 5.15328L33.1209 0.449935C32.956 0.0987196 32.3798 0.0987196 32.2148 0.449935L30.0074 5.15328L25.081 5.90579C24.6764 5.96789 24.5148 6.45999 24.7986 6.75045L28.3775 10.4188L27.5315 15.6049C27.4641 16.0169 27.9041 16.3261 28.268 16.1238L32.6682 13.692L37.0684 16.1244C37.429 16.3247 37.873 16.0216 37.8049 15.6056L36.9589 10.4195L40.5378 6.75111C40.8216 6.45999 40.6594 5.96789 40.2554 5.90579Z" fill="#FFC107"/>
+                                </g>
+                                <g clip-path="url(#clip2)">
+                                <path d="M64.293 5.90579L59.3666 5.15328L57.1585 0.449935C56.9936 0.0987196 56.4173 0.0987196 56.2524 0.449935L54.045 5.15328L49.1186 5.90579C48.714 5.96789 48.5524 6.45999 48.8362 6.75045L52.4151 10.4188L51.5691 15.6049C51.5017 16.0169 51.9417 16.3261 52.3056 16.1238L56.7058 13.692L61.106 16.1244C61.4666 16.3247 61.9106 16.0216 61.8425 15.6056L60.9965 10.4195L64.5754 6.75111C64.8592 6.45999 64.6969 5.96789 64.293 5.90579Z" fill="#FFC107"/>
+                                </g>
+                                <g clip-path="url(#clip3)">
+                                <path d="M88.3305 5.90579L83.4042 5.15328L81.196 0.449935C81.0311 0.0987196 80.4549 0.0987196 80.29 0.449935L78.0825 5.15328L73.1561 5.90579C72.7515 5.96789 72.5899 6.45999 72.8737 6.75045L76.4526 10.4188L75.6066 15.6049C75.5392 16.0169 75.9792 16.3261 76.3431 16.1238L80.7433 13.692L85.1435 16.1244C85.5041 16.3247 85.9481 16.0216 85.88 15.6056L85.034 10.4195L88.613 6.75111C88.8967 6.45999 88.7345 5.96789 88.3305 5.90579Z" fill="#FFC107"/>
+                                </g>
+                                <g clip-path="url(#clip4)">
+                                <path d="M112.368 5.90579L107.442 5.15328L105.234 0.449935C105.069 0.0987196 104.492 0.0987196 104.327 0.449935L102.12 5.15328L97.1937 5.90579C96.789 5.96789 96.6275 6.45999 96.9112 6.75045L100.49 10.4188L99.6442 15.6049C99.5767 16.0169 100.017 16.3261 100.381 16.1238L104.781 13.692L109.181 16.1244C109.542 16.3247 109.986 16.0216 109.918 15.6056L109.072 10.4195L112.65 6.75111C112.934 6.45999 112.772 5.96789 112.368 5.90579Z" fill="#E6E6E6"/>
+                                </g>
+                                <defs>
+                                <clipPath id="clip0">
+                                <rect width="16.025" height="16.025" fill="white" transform="translate(0.618164 0.173828)"/>
+                                </clipPath>
+                                <clipPath id="clip1">
+                                <rect width="16.025" height="16.025" fill="white" transform="translate(24.6557 0.173828)"/>
+                                </clipPath>
+                                <clipPath id="clip2">
+                                <rect width="16.025" height="16.025" fill="white" transform="translate(48.6933 0.173828)"/>
+                                </clipPath>
+                                <clipPath id="clip3">
+                                <rect width="16.025" height="16.025" fill="white" transform="translate(72.7308 0.173828)"/>
+                                </clipPath>
+                                <clipPath id="clip4">
+                                <rect width="16.025" height="16.025" fill="white" transform="translate(96.7684 0.173828)"/>
+                                </clipPath>
+                                </defs>
+                                </svg>
+
+                        .revs__rate.rrate
+                            .rrate__img
+                                +image('images/content/revs/6.png')
+                            .rrate__name Рейтинг
+                            .rrate__rate 4,8 из 5
+                        .revs__rate.rrate
+                            .rrate__img
+                                +image('images/content/revs/7.png')
+                            .rrate__name Рейтинг
+                            .rrate__rate 14+/-2
+                    .revs__slider
+                        button(type='button').revs__btn.revs__prev
+                            <svg width="37" height="73" viewBox="0 0 37 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5.09228e-06 36.3282C1.58427e-06 56.3916 16.2647 72.6563 36.3282 72.6563L36.3282 6.35182e-06C16.2647 2.8438e-06 8.60029e-06 16.2647 5.09228e-06 36.3282Z" fill="#E79089"/>
+                            <path d="M23.9611 27.8262L16.2317 35.942L23.9611 44.0579" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        .revs__container.swiper-container
+                            .swiper-wrapper
+                                each i in [1,2,3,4,5]
+                                    .swiper-slide.rev
+                                        .rev__top
+                                            .rev__name Татьяна Р.
+                                            .rev__stars
+                                                <svg width="113" height="17" viewBox="0 0 113 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <g clip-path="url(#clip0)">
+                                                <path d="M15.5997 5.73196L10.6733 4.97946L8.46523 0.276107C8.30031 -0.0751086 7.72407 -0.0751086 7.55915 0.276107L5.3517 4.97946L0.425339 5.73196C0.0207071 5.79406 -0.140879 6.28616 0.142898 6.57662L3.72182 10.245L2.87583 15.4311C2.80839 15.8431 3.24842 16.1522 3.61232 15.9499L8.01252 13.5181L12.4127 15.9506C12.7733 16.1509 13.2173 15.8478 13.1492 15.4318L12.3032 10.2457L15.8821 6.57729C16.1659 6.28616 16.0037 5.79406 15.5997 5.73196Z" fill="#FFC107"/>
+                                                </g>
+                                                <g clip-path="url(#clip1)">
+                                                <path d="M39.6372 5.73196L34.7109 4.97946L32.5028 0.276107C32.3378 -0.0751086 31.7616 -0.0751086 31.5967 0.276107L29.3892 4.97946L24.4629 5.73196C24.0582 5.79406 23.8967 6.28616 24.1804 6.57662L27.7594 10.245L26.9134 15.4311C26.8459 15.8431 27.286 16.1522 27.6499 15.9499L32.0501 13.5181L36.4503 15.9506C36.8108 16.1509 37.2549 15.8478 37.1868 15.4318L36.3408 10.2457L39.9197 6.57729C40.2035 6.28616 40.0412 5.79406 39.6372 5.73196Z" fill="#FFC107"/>
+                                                </g>
+                                                <g clip-path="url(#clip2)">
+                                                <path d="M63.6748 5.73196L58.7485 4.97946L56.5403 0.276107C56.3754 -0.0751086 55.7992 -0.0751086 55.6343 0.276107L53.4268 4.97946L48.5004 5.73196C48.0958 5.79406 47.9342 6.28616 48.218 6.57662L51.7969 10.245L50.9509 15.4311C50.8835 15.8431 51.3235 16.1522 51.6874 15.9499L56.0876 13.5181L60.4878 15.9506C60.8484 16.1509 61.2924 15.8478 61.2243 15.4318L60.3783 10.2457L63.9573 6.57729C64.241 6.28616 64.0788 5.79406 63.6748 5.73196Z" fill="#FFC107"/>
+                                                </g>
+                                                <g clip-path="url(#clip3)">
+                                                <path d="M87.7124 5.73196L82.786 4.97946L80.5779 0.276107C80.413 -0.0751086 79.8367 -0.0751086 79.6718 0.276107L77.4644 4.97946L72.538 5.73196C72.1334 5.79406 71.9718 6.28616 72.2556 6.57662L75.8345 10.245L74.9885 15.4311C74.9211 15.8431 75.3611 16.1522 75.725 15.9499L80.1252 13.5181L84.5254 15.9506C84.886 16.1509 85.33 15.8478 85.2619 15.4318L84.4159 10.2457L87.9948 6.57729C88.2786 6.28616 88.1163 5.79406 87.7124 5.73196Z" fill="#FFC107"/>
+                                                </g>
+                                                <g clip-path="url(#clip4)">
+                                                <path d="M111.75 5.73196L106.824 4.97946L104.615 0.276107C104.451 -0.0751086 103.874 -0.0751086 103.709 0.276107L101.502 4.97946L96.5755 5.73196C96.1709 5.79406 96.0093 6.28616 96.2931 6.57662L99.872 10.245L99.026 15.4311C98.9586 15.8431 99.3986 16.1522 99.7625 15.9499L104.163 13.5181L108.563 15.9506C108.924 16.1509 109.368 15.8478 109.299 15.4318L108.453 10.2457L112.032 6.57729C112.316 6.28616 112.154 5.79406 111.75 5.73196Z" fill="#E6E6E6"/>
+                                                </g>
+                                                <defs>
+                                                <clipPath id="clip0">
+                                                <rect width="16.025" height="16.025" fill="white"/>
+                                                </clipPath>
+                                                <clipPath id="clip1">
+                                                <rect width="16.025" height="16.025" fill="white" transform="translate(24.0375)"/>
+                                                </clipPath>
+                                                <clipPath id="clip2">
+                                                <rect width="16.025" height="16.025" fill="white" transform="translate(48.0751)"/>
+                                                </clipPath>
+                                                <clipPath id="clip3">
+                                                <rect width="16.025" height="16.025" fill="white" transform="translate(72.1127)"/>
+                                                </clipPath>
+                                                <clipPath id="clip4">
+                                                <rect width="16.025" height="16.025" fill="white" transform="translate(96.1502)"/>
+                                                </clipPath>
+                                                </defs>
+                                                </svg>
+
+                                        .rev__grid
+                                            .rev__left
+                                                .rev__content.content
+                                                    p В стоматологической клинике «Менделеев» мне сделали одномоментную имплантацию двух нижних зубов. Операцию проводил Лушанин Михаил Сергеевич, виртуозно справился со своей работой. А Лавский Евгений Владимирович, стоматолог-ортопед, прекрасно ее закончил. Очень благодарна обоим врачам за их профессионализм, внимание, бережное отношение.
+                                                    p Хочется выделить то, что внимательное и чуткое отношение к пациенту со стороны всего персонала клиники - это абсолютная норма. Редко сейчас, к сожалению, такое встретишь, поэтому это очень ценно, для меня по крайней мере. В клинике современное оборудование, всё очень чисто, приятно. Приём ведется в точно назначенное время. Консультант обязательно связывается по телефону за день до приёма с целью напоминания и уточнения информации.
+                                                    p Желаю клинике и всему персоналу дальнейшего развития и успехов!
+                                                .rev__href
+                                                    | Отзыв оставлен на
+                                                    |
+                                                    b yandex.ru
+                                            .rev__right
+                                                a(href="images/content/revs/img.jpg" data-fancybox="images").rev__fancy
+                                                    +image('images/content/revs/img-thumb.jpg')
+                                                    button(type='button').rev__loop
+                                                        <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <g opacity="0.5">
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M18.8 4.69999C11.0128 4.69999 4.69999 11.0128 4.69999 18.8C4.69999 26.5872 11.0128 32.8999 18.8 32.8999C26.5872 32.8999 32.8999 26.5872 32.8999 18.8C32.8999 11.0128 26.5872 4.69999 18.8 4.69999ZM0 18.8C0 8.41703 8.41703 0 18.8 0C29.1829 0 37.5999 8.41703 37.5999 18.8C37.5999 29.1829 29.1829 37.5999 18.8 37.5999C8.41703 37.5999 0 29.1829 0 18.8Z" fill="#E79089"/>
+                                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M28.8883 28.8883C29.806 27.9705 31.2939 27.9705 32.2117 28.8883L46.3116 42.9882C47.2294 43.906 47.2294 45.3939 46.3116 46.3116C45.3939 47.2294 43.906 47.2294 42.9882 46.3116L28.8883 32.2117C27.9705 31.2939 27.9705 29.806 28.8883 28.8883Z" fill="#E79089"/>
+                                                        <path d="M21.243 16.9587H27.0848V21.2427H21.243V27.0845H16.959V21.2427H11.1526V16.9587H16.959V11.1523H21.243V16.9587Z" fill="#E79089"/>
+                                                        </g>
+                                                        </svg>
+                        button(type='button').revs__btn.revs__next
+                            <svg width="37" height="73" viewBox="0 0 37 73" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M36.6562 36.3281C36.6562 16.2646 20.3916 -6.20749e-06 0.328115 -4.45349e-06L0.328121 72.6563C20.3916 72.6563 36.6562 56.3916 36.6562 36.3281Z" fill="#E79089"/>
+                            <path d="M12.6797 45.0469L20.6719 36.6914L12.6797 28.3359" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+        //- specs
+        section.index__specs
+            .specs
+                .container
+                    h2.specs__title Ведущие имплантологи и лучшие ортопеды Москвы
+                    .specs__sub У нас работают лучшие врачи России и СНГ, которые учатся 2 раза в год у лучших специалистов мира. А ассистенты наших врачей становятся главврачами в других клиниках.
+                    .specs__grid
+                        each i in [1,2]
+                            .specs__item.sitem
+                                .sitem__bg
+                                    +image('images/content/specs/bg' + i + '.png')
+                                    a(data-fancybox href="https://www.youtube.com/watch?v=_sI_Ps7JSEk").sitem__btn
+                                        span.sitem__btn-name ВИДЕО О ВРАЧЕ
+                                        span.sitem__btn-svg
+                                            <svg width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="38.5" cy="38.5" r="38.5" fill="#E79089"/>
+                                            <path d="M48 38.5L33.75 46.7272L33.75 30.2728L48 38.5Z" fill="white"/>
+                                            </svg>
+                                .sitem__wrap
+                                    .sitem__member
+                                        | Член европейской
+                                        br
+                                        | ассоциации стоматологов
+
+                                    .sitem__prof Стоматолог-имплантолог, ортопед
+                                    .sitem__name
+                                        | Корякин
+                                        br
+                                        | Артём Сергеевич
+                                    .sitem__age Стаж работы - 14 лет
+                                    .sitem__imgs
+                                        each img in [1,2,3,4]
+                                            a(href='images/content/specs/' + img + '.jpg' data-fancybox="images" + i).sitem__img
+                                                +image('images/content/specs/thumb' + img + '.jpg')
+        //- we
+        section.index__we
+            .we
+                .container
+                    h2.we__title Мы — та самая клиника, где лечатся стоматологи и другие врачи
+                    .we__sub У нас всегда чисто, комфортно и не страшно, а сервис на высшем уровне! Мы всегда ждём вас и готовы оказать квалифицированную помощь.
+                    .we__place
+                        .we__place-img
+                            +image('images/content/we/place.png')
+                        .we__place-desc
+                            .we__place-title 1 место в народном рейтинге стоматологий Москвы
+                            .we__place-txt Две победы в народном рейтинге стоматологических клиник Москвы — в 2017 и 2019 годах по результатам оставленных отзывов. Независимый национальный конкурс — это самая честная оценка работы стоматологии.
+                .we__slider
+                    .we__container.swiper-container
+                        .swiper-wrapper
+                            each i in [1,2,3,4,1,2,3,4]
+                                .swiper-slide.wslide
+                                    +image('images/content/we/' + i + '.jpg')
+                .container
+                    .we__advantages
+                        .weadv.we__advantage
+                            .weadv__img
+                                +image('images/content/we/i1.png')
+                            .weadv__desc
+                                .weadv__title Забота
+                                .weadv__txt Тёплое отношение к пациентам, как к «своим», умение слушать и слышать
+                        .weadv.we__advantage
+                            .weadv__img
+                                +image('images/content/we/i2.png')
+                            .weadv__desc
+                                .weadv__title Честность
+                                .weadv__txt Недорогая стоматология в Москве с прозрачным ценообразованием
+                        .weadv.we__advantage
+                            .weadv__img
+                                +image('images/content/we/i3.png')
+                            .weadv__desc
+                                .weadv__title Профессионализм
+                                .weadv__txt Имплантологи, ортопеды и зубные техники с опытом работы 8-30 лет
+        //- faq
+        section.index__faq
+            .faq
+                .container
+                    h2.faq__title Что чаще всего спрашивают пациенты на приёме у врача
+                    .faq__call
+                        .fcall
+                            .fcall__left
+                                +image('images/content/faq/img.png')
+                            .fcall__center
+                                .fcall__txt
+                                    | На вопросы отвечает:
+                                    br
+                                    b Корякин Артём Сергеевич
+                                    br
+                                    | Главный врач, стоматолог-имплантолог, ортопед
+                                    br
+                                    | Стаж 14 лет
+                            .fcall__right
+                                .fcall__call
+                                    | Вы можете задать свой вопрос по номеру:
+                                    |
+                                    a(href='tel:+7(495)172-42-46') +7 (495) 172-42-46
+                                button(type='button').fcall__btn.btn.jsCall Спросите специалиста
+                    .faq__list
+                        each i in [1,2,3,4,5,6,7,8,9,10]
+                            .faq__item.jsFaq
+                                .faq__question
+                                    span.faq__question-txt Можно ли ставить импланты при полном отсутствии зубов?
+                                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.70711 7.70711C7.31658 8.09763 6.68342 8.09763 6.29289 7.70711L0.292894 1.70711C-0.0976312 1.31658 -0.0976312 0.683417 0.292894 0.292893C0.683418 -0.0976311 1.31658 -0.0976311 1.70711 0.292893L7 5.58579L12.2929 0.292894C12.6834 -0.0976301 13.3166 -0.09763 13.7071 0.292894C14.0976 0.683418 14.0976 1.31658 13.7071 1.70711L7.70711 7.70711Z" fill="#3E3E3E"/>
+                                    </svg>
+                                .faq__answer Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam asperiores atque blanditiis consectetur cum, cumque debitis dicta dolor doloremque dolores ea esse et iste maiores maxime modi mollitia nam natus nostrum pariatur porro quis reiciendis sapiente similique sint sit suscipit temporibus vel velit voluptates? Dolores esse harum modi quaerat temporibus.
+                    a(href='/').faq__link.btn
+                        | Смотреть все
+                        <svg width="40" height="16" viewBox="0 0 40 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M39.7071 8.70711C40.0976 8.31658 40.0976 7.68342 39.7071 7.29289L33.3431 0.928932C32.9526 0.538408 32.3195 0.538408 31.9289 0.928932C31.5384 1.31946 31.5384 1.95262 31.9289 2.34315L37.5858 8L31.9289 13.6569C31.5384 14.0474 31.5384 14.6805 31.9289 15.0711C32.3195 15.4616 32.9526 15.4616 33.3431 15.0711L39.7071 8.70711ZM0 9H39V7H0V9Z" fill="white"/>
+                        </svg>
+        //- map
+        section.index__map
+            //TODO сюда потом надо вставить код с конструктора клиента
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Afab4d94ed1d98953cf7b2114a217f4cae7b782de44ac79cd3f5167277954246b&amp;source=constructor" frameborder="0"></iframe>
+        //- what
+        section.index__what
+            +what('what_mbsm')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

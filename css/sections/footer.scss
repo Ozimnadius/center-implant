@@ -1,2 +1,36 @@
 .footer {
+  padding-top: 100px;
+  padding-bottom: 30px;
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+
+  &__contacts{
+    color: #333333;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: lh(18,31.77);
+  }
+
+  &__imgs{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+  }
+
+  &__bottom{
+    display: flex;
+  }
+
+  &__logo{
+    margin-right: 35px;
+  }
+
+  &__copy{
+    font-size: 14px;
+  }
 }

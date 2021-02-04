@@ -1,0 +1,60 @@
+.cert{
+  background: url("/images/content/cert/bg.jpg") 0 0 no-repeat;
+  background-size: cover;
+  padding: 40px 50px 65px 60px;
+  border-radius: 20px;
+  overflow: hidden;
+  color: $bg;
+
+  &__grid{
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 'title img' 'sub img' 'list img';
+    grid-gap: 25px;
+    margin-bottom: 25px;
+  }
+
+  &__title{
+    grid-area: title;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: lh(30,37);
+  }
+
+  &__sub{
+    grid-area: sub;
+    color: #dee5e9;
+  }
+
+  &__list{
+    grid-area: list;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 40px;
+  }
+
+  &__item{
+    display: flex;
+    align-items: center;
+    color: #dee5e9;
+    font-size: 15px;
+
+    svg{
+      flex-shrink: 0;
+      margin-right: 20px;
+    }
+  }
+
+  &__img{
+    grid-area: img;
+    align-self: flex-end;
+  }
+
+  &__txt{
+    color: #dee5e9;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+}

@@ -13,5 +13,23 @@
     transform: translateY(-50%);
   }
 
+  &__third{
+    padding-top: 100px;
+    padding-bottom: 110px;
+  }
+
+  &__cert{
+    margin-bottom: 90px;
+  }
+
+  &__map{
+    height: 504px;
+    iframe{
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+
 
 }

@@ -51,6 +51,37 @@ html(lang="ru")
 
             //- footer
             footer.footer
+                .container
+                    .footer__top
+                        .footer__contacts
+                            | Адрес
+                            br
+                            | Москва, ул. Верхние поля, д. 35, к. 4
+                            br
+                            | Телефон
+                            br
+                            a(href='tel:+7(495)088-27-88') +7 (495) 088-27-88
+                            br
+                            a(href='tel:+7(925)426-08-54') +7 (925) 426-08-54
+                            br
+                            | E-mail
+                            br
+                            a(href='mailto:info@center-implant.ru') info@center-implant.ru
+                            br
+                            | Режим работы
+                            br
+                            | Пн. – Вс.: с 10:00 до 22:00
+                        .footer__imgs
+                            each i in [1,2,3]
+                                a(href="images/content/footer/img.jpg" data-fancybox="footer").footer__img
+                                    +image('images/content/footer/thumb.jpg')
+                    .footer__bottom
+                        a(href='/').footer__logo
+                            +image('images/icons/logo.png')
+                        .footer__copy
+                            b ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА
+                            br
+                            | © «Центр Имплантации и протезирования зубов «Империя». Все права защищены. Обращаем ваше внимание на то, что данный Интернет-сайт носит исключительно информационный характер и ни при каких условиях не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса РФ.
 
         .debug
             div

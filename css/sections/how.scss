@@ -1,10 +1,12 @@
 .how {
-  @include row-flex;
+  //@include row-flex;
 
   &__container {
-    @include col;
-    @include size(21);
-    @include shift(1.5);
+    //@include col;
+    //@include size(21);
+    //@include shift(1.5);
+    max-width: 1060px;
+    margin: 0 auto;
   }
 
   &__sub {

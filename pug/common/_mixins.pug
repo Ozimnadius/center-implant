@@ -11,4 +11,47 @@ mixin image(imagePath, imageClass, imageAlt)
     - var alt = 'lorem'
   else
     - var alt = imageAlt
-  img(src=`${imagePath}`, alt=`${alt}`, class=`${imageClass}`)
+  if !imageClass
+    img(src=`${imagePath}`, alt=`${alt}`)
+  else
+    img(src=`${imagePath}`, alt=`${alt}`, class=`${imageClass}`)
+
+mixin what(cls)
+  div(class=cls).what
+    .container
+      .what__grid
+        .what__left
+          h2.what__title Что вас ждёт на бесплатном осмотре у имплантолога:
+          ul.what__ul
+            each i in ['Подбор импланта, который подойдёт вам на 100%','Полное обследование и 3 варианта лечения от ведущих врачей-имплантологов России']
+              li.what__li.li= i
+          .what__tel
+            | Звоните круглосуточно&nbsp;
+            a(href='tel:+7(495)186-22-41') +7 (495) 186-22-41
+            br
+            | или оставьте заявку, мы вам перезвоним
+          form.what__form
+            .what__accept
+              label.accept
+                input(type='checkbox' name='accept' checked).accept__input
+                span.accept__fake
+                  span.accept__checkbox
+                    <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.11188 4.01801L4.07938 6.98426L10.0119 1.05176" stroke="#E79089" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  span.accept__txt.what__accept-txt Нажимая кнопку "Записаться на просмотр", даю согласие на обработку моих персональных данных
+
+
+
+            .what__fields
+              .what__field
+                input(type='tel' name='tel' placeholder='Номер телефона').what__input
+              .what__field
+                button(type='submit').what__submit.btn ЗАПИСАТЬСЯ НА ПРОСМОТР
+        .what__right
+          a(href='https://www.youtube.com/watch?v=_sI_Ps7JSEk' data-fancybox).what__yt
+            +image('https://img.youtube.com/vi/_sI_Ps7JSEk/hqdefault.jpg')
+            span.what__btn
+              <svg width="19" height="23" viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M19 11.5L0.250001 22.3253L0.250002 0.674682L19 11.5Z" fill="white"/>
+              </svg>
