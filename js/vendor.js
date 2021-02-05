@@ -3,5 +3,7 @@
 // @prepros-append ../node_modules/swiper/swiper-bundle.js
 // @prepros-append ../node_modules/@popperjs/core/dist/umd/popper.js
 // @prepros-append ../node_modules/tippy.js/dist/tippy-bundle.umd.js
+// @prepros-append ../node_modules/jquery-validation/dist/jquery.validate.js
+// @prepros-append ../node_modules/jquery.maskedinput/src/jquery.maskedinput.js
 
 

@@ -42,6 +42,8 @@
           <section class="index__banner">
             <div class="banner">
               <div class="container">
+                <div class="banner__img"><img src="images/content/banner/bg-sm.png" alt="lorem"/>
+                </div>
                 <h2 class="banner__title">ИМПЛАНТАЦИЯ «ПОД КЛЮЧ»</h2>
                 <div class="banner__small">ОТ ЛУЧШЕЙ СТОМАТОЛОГИИ РФ С ПОЖИЗНЕННОЙ ГАРАНТИЕЙ</div>
                 <div class="banner__sub">
@@ -226,10 +228,10 @@
                 <h2 class="steps__title">Цена зависит от вида имплантации</h2>
                 <div class="steps__sub">Мы подберем вид имплантации, который подойдет вам 100%</div>
                 <div class="steps__tabs jsTabs">
-                  <div class="steps__sws">
-                    <button class="steps__sw active jsSw" type="button">Одномоментная</button>
-                    <button class="steps__sw jsSw" type="button">Классическая</button>
-                    <button class="steps__sw jsSw" type="button">Имплантация All on 4/6</button>
+                  <div class="steps__sws jsSelect">
+                    <button class="steps__sw active jsSw jsSelectItem" type="button">Одномоментная</button>
+                    <button class="steps__sw jsSw jsSelectItem" type="button">Классическая</button>
+                    <button class="steps__sw jsSw jsSelectItem" type="button">Имплантация All on 4/6</button>
                   </div>
                   <div class="steps__tabs">
                     <div class="steps__stab stab active jsTab">
@@ -276,7 +278,7 @@
                               <p>В “MN-dental”: от 34 т.р. 17т.р.</p>
                             </div>
                             <div class="stprice__item">
-                              <div class="stpprice__svg"><svg width="102" height="32" viewBox="0 0 102 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <div class="stprice__svg"><svg width="102" height="32" viewBox="0 0 102 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.871948 6.06521C21.9452 -0.598296 71.4478 -4.95989 100.872 30.9018" stroke="#3D8472" stroke-width="2"/>
 </svg>
                               </div>
@@ -304,7 +306,8 @@
                       <li class="what__li li">Полное обследование и 3 варианта лечения от ведущих врачей-имплантологов России</li>
                     </ul>
                     <div class="what__tel">Звоните круглосуточно&nbsp;<a href="tel:+7(495)186-22-41">+7 (495) 186-22-41</a><br/>или оставьте заявку, мы вам перезвоним</div>
-                    <form class="what__form">
+                    <form class="what__form" action="ajax.php" method="post">
+                      <input type="hidden" name="action" value="feed"/>
                       <div class="what__accept">
                         <label class="accept">
                           <input class="accept__input" type="checkbox" name="accept" checked="checked"/><span class="accept__fake"><span class="accept__checkbox"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -314,7 +317,7 @@
                       </div>
                       <div class="what__fields">
                         <div class="what__field">
-                          <input class="what__input" type="tel" name="tel" placeholder="Номер телефона"/>
+                          <input class="what__input" type="tel" name="tel" placeholder="Номер телефона" data-rule-required="true" data-msg-required="Введите телефон"/>
                         </div>
                         <div class="what__field">
                           <button class="what__submit btn" type="submit">ЗАПИСАТЬСЯ НА ПРОСМОТР</button>
@@ -775,17 +778,19 @@
               <div class="index__comps">
                 <div class="comps">
                   <h2 class="comps__title">Клиника Империя работает со всеми мировыми производителями имплантатов</h2>
-                  <div class="comps__sub">Более 30 производителей</div>
-                  <div class="comps__list"><a class="comps__item" href="/"><img src="images/content/comps/1.jpg" alt="lorem"/></a><a class="comps__item" href="/"><img src="images/content/comps/2.jpg" alt="lorem"/></a><a class="comps__item" href="/"><img src="images/content/comps/3.jpg" alt="lorem"/></a><a class="comps__item" href="/"><img src="images/content/comps/4.jpg" alt="lorem"/></a><a class="comps__item" href="/"><img src="images/content/comps/5.jpg" alt="lorem"/></a><a class="comps__item" href="/"><img src="images/content/comps/6.jpg" alt="lorem"/></a><a class="comps__item" href="/"><img src="images/content/comps/7.jpg" alt="lorem"/></a>
+                  <div class="comps__wrap">
+                    <div class="comps__sub">Более 30 производителей</div>
+                    <div class="comps__list"><a class="comps__item" href="/"><img src="images/content/comps/1.jpg" alt="lorem"/></a><a class="comps__item" href="/"><img src="images/content/comps/2.jpg" alt="lorem"/></a><a class="comps__item" href="/"><img src="images/content/comps/3.jpg" alt="lorem"/></a><a class="comps__item" href="/"><img src="images/content/comps/4.jpg" alt="lorem"/></a><a class="comps__item" href="/"><img src="images/content/comps/5.jpg" alt="lorem"/></a><a class="comps__item" href="/"><img src="images/content/comps/6.jpg" alt="lorem"/></a><a class="comps__item" href="/"><img src="images/content/comps/7.jpg" alt="lorem"/></a>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-          <section__advants>
+          <section class="index__advants">
             <div class="advants">
               <div class="container">
-                <h2 class="advants__title">Мы дорожим репутацией и делаем свою работу первоклассно!</h2>
+                <h2 class="advants__title">Преимущества нашей клиники</h2>
                 <div class="advants__sub">Мы дорожим репутацией и делаем свою работу первоклассно!</div>
                 <div class="advants__list">
                   <div class="advants__item aitem">
@@ -815,7 +820,7 @@
                 </div>
               </div>
             </div>
-          </section__advants>
+          </section>
           <section class="index__results">
             <div class="results">
               <div class="container">
@@ -2349,7 +2354,7 @@
                         </div>
                         <div class="rev__grid">
                           <div class="rev__left">
-                            <div class="rev__content content">
+                            <div class="rev__content">
                               <p>В стоматологической клинике «Менделеев» мне сделали одномоментную имплантацию двух нижних зубов. Операцию проводил Лушанин Михаил Сергеевич, виртуозно справился со своей работой. А Лавский Евгений Владимирович, стоматолог-ортопед, прекрасно ее закончил. Очень благодарна обоим врачам за их профессионализм, внимание, бережное отношение.</p>
                               <p>Хочется выделить то, что внимательное и чуткое отношение к пациенту со стороны всего персонала клиники - это абсолютная норма. Редко сейчас, к сожалению, такое встретишь, поэтому это очень ценно, для меня по крайней мере. В клинике современное оборудование, всё очень чисто, приятно. Приём ведется в точно назначенное время. Консультант обязательно связывается по телефону за день до приёма с целью напоминания и уточнения информации.</p>
                               <p>Желаю клинике и всему персоналу дальнейшего развития и успехов!</p>
@@ -2411,7 +2416,7 @@
                         </div>
                         <div class="rev__grid">
                           <div class="rev__left">
-                            <div class="rev__content content">
+                            <div class="rev__content">
                               <p>В стоматологической клинике «Менделеев» мне сделали одномоментную имплантацию двух нижних зубов. Операцию проводил Лушанин Михаил Сергеевич, виртуозно справился со своей работой. А Лавский Евгений Владимирович, стоматолог-ортопед, прекрасно ее закончил. Очень благодарна обоим врачам за их профессионализм, внимание, бережное отношение.</p>
                               <p>Хочется выделить то, что внимательное и чуткое отношение к пациенту со стороны всего персонала клиники - это абсолютная норма. Редко сейчас, к сожалению, такое встретишь, поэтому это очень ценно, для меня по крайней мере. В клинике современное оборудование, всё очень чисто, приятно. Приём ведется в точно назначенное время. Консультант обязательно связывается по телефону за день до приёма с целью напоминания и уточнения информации.</p>
                               <p>Желаю клинике и всему персоналу дальнейшего развития и успехов!</p>
@@ -2473,7 +2478,7 @@
                         </div>
                         <div class="rev__grid">
                           <div class="rev__left">
-                            <div class="rev__content content">
+                            <div class="rev__content">
                               <p>В стоматологической клинике «Менделеев» мне сделали одномоментную имплантацию двух нижних зубов. Операцию проводил Лушанин Михаил Сергеевич, виртуозно справился со своей работой. А Лавский Евгений Владимирович, стоматолог-ортопед, прекрасно ее закончил. Очень благодарна обоим врачам за их профессионализм, внимание, бережное отношение.</p>
                               <p>Хочется выделить то, что внимательное и чуткое отношение к пациенту со стороны всего персонала клиники - это абсолютная норма. Редко сейчас, к сожалению, такое встретишь, поэтому это очень ценно, для меня по крайней мере. В клинике современное оборудование, всё очень чисто, приятно. Приём ведется в точно назначенное время. Консультант обязательно связывается по телефону за день до приёма с целью напоминания и уточнения информации.</p>
                               <p>Желаю клинике и всему персоналу дальнейшего развития и успехов!</p>
@@ -2535,7 +2540,7 @@
                         </div>
                         <div class="rev__grid">
                           <div class="rev__left">
-                            <div class="rev__content content">
+                            <div class="rev__content">
                               <p>В стоматологической клинике «Менделеев» мне сделали одномоментную имплантацию двух нижних зубов. Операцию проводил Лушанин Михаил Сергеевич, виртуозно справился со своей работой. А Лавский Евгений Владимирович, стоматолог-ортопед, прекрасно ее закончил. Очень благодарна обоим врачам за их профессионализм, внимание, бережное отношение.</p>
                               <p>Хочется выделить то, что внимательное и чуткое отношение к пациенту со стороны всего персонала клиники - это абсолютная норма. Редко сейчас, к сожалению, такое встретишь, поэтому это очень ценно, для меня по крайней мере. В клинике современное оборудование, всё очень чисто, приятно. Приём ведется в точно назначенное время. Консультант обязательно связывается по телефону за день до приёма с целью напоминания и уточнения информации.</p>
                               <p>Желаю клинике и всему персоналу дальнейшего развития и успехов!</p>
@@ -2597,7 +2602,7 @@
                         </div>
                         <div class="rev__grid">
                           <div class="rev__left">
-                            <div class="rev__content content">
+                            <div class="rev__content">
                               <p>В стоматологической клинике «Менделеев» мне сделали одномоментную имплантацию двух нижних зубов. Операцию проводил Лушанин Михаил Сергеевич, виртуозно справился со своей работой. А Лавский Евгений Владимирович, стоматолог-ортопед, прекрасно ее закончил. Очень благодарна обоим врачам за их профессионализм, внимание, бережное отношение.</p>
                               <p>Хочется выделить то, что внимательное и чуткое отношение к пациенту со стороны всего персонала клиники - это абсолютная норма. Редко сейчас, к сожалению, такое встретишь, поэтому это очень ценно, для меня по крайней мере. В клинике современное оборудование, всё очень чисто, приятно. Приём ведется в точно назначенное время. Консультант обязательно связывается по телефону за день до приёма с целью напоминания и уточнения информации.</p>
                               <p>Желаю клинике и всему персоналу дальнейшего развития и успехов!</p>
@@ -2847,7 +2852,8 @@
                       <li class="what__li li">Полное обследование и 3 варианта лечения от ведущих врачей-имплантологов России</li>
                     </ul>
                     <div class="what__tel">Звоните круглосуточно&nbsp;<a href="tel:+7(495)186-22-41">+7 (495) 186-22-41</a><br/>или оставьте заявку, мы вам перезвоним</div>
-                    <form class="what__form">
+                    <form class="what__form" action="ajax.php" method="post">
+                      <input type="hidden" name="action" value="feed"/>
                       <div class="what__accept">
                         <label class="accept">
                           <input class="accept__input" type="checkbox" name="accept" checked="checked"/><span class="accept__fake"><span class="accept__checkbox"><svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2857,7 +2863,7 @@
                       </div>
                       <div class="what__fields">
                         <div class="what__field">
-                          <input class="what__input" type="tel" name="tel" placeholder="Номер телефона"/>
+                          <input class="what__input" type="tel" name="tel" placeholder="Номер телефона" data-rule-required="true" data-msg-required="Введите телефон"/>
                         </div>
                         <div class="what__field">
                           <button class="what__submit btn" type="submit">ЗАПИСАТЬСЯ НА ПРОСМОТР</button>
@@ -2913,6 +2919,34 @@
         </div>
       </div>
     </div>
+    <template class="template">
+      <form class="callorder form" action="ajax.php" method="post">
+        <h2 class="form__title">Обратный звонок</h2>
+        <div class="form__sub">Укажите ваше имя и контактный номер и наши специалисты позвонят Вам</div>
+        <div class="form__error">Заполните пожалуйста обязательные поля</div>
+        <div class="form__fields">
+          <div class="form__field">
+            <input class="input" type="text" name="name" placeholder="Как Вас зовут?" data-rule-required="true" data-msg-required="Введите Имя">
+          </div>
+          <div class="form__field">
+            <input class="input" type="tel" name="tel" placeholder="+7 (___) ___-__-__" data-rule-required="true" data-msg-required="Введите телефон">
+          </div>
+        </div>
+        <div class="form__accept">
+          <label class="accept">
+            <input class="accept__input" type="checkbox" name="policy" checked><span class="accept__fake"><span class="accept__checkbox"><svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.927734 3.44389L3.19261 5.75644L7.72045 1.13135" stroke="#E79089" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span><span class="accept__txt">Нажимая кнопку "Записаться на просмотр", даю согласие на обработку моих персональных данных</span></span>
+          </label>
+        </div>
+        <button class="btn form__submit" type="submit">Отправить</button>
+        <input type="hidden" name="action" value="callorder">
+      </form>
+      <div class="form__success success">
+        <div class="success__title">Спасибо!</div>
+        <div class="success__txt">Ваша заявка принята в работу.<br>Ожидайте звонка.</div><a class="success__link btn" href="/">Вернуться к сайту</a>
+      </div>
+    </template>
     <script src="js/vendor.min.js"></script>
     <script src="js/main.min.js"></script>
     <!-- Для изменений после верстки-->

@@ -6,23 +6,55 @@
     font-weight: 700;
     line-height: lh(36,45);
     margin-bottom: 45px;
+    @include lg-block{
+      font-size: 30px;
+      margin-bottom: 35px;
+    }
+  }
+
+  &__wrap{
+    @include lg-block{
+      margin: 0 -20px;
+      padding: 40px 20px;
+      padding-right: 0;
+      background: linear-gradient(99.24deg, #2A8277 -0.01%, #082C34 100.01%);
+    }
   }
 
   &__sub{
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 25px;
+    @include lg-block{
+      color: $bg;
+    }
   }
 
   &__list{
     display: grid;
     grid-template-columns: repeat(7,1fr);
     grid-gap: 50px;
+    @include lg-block{
+      display: flex;
+      width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      grid-gap: 0;
+    }
   }
 
   &__item{
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 20px;
     overflow: hidden;
+    @include lg-block{
+      flex-shrink: 0;
+      width: 137px;
+      height: 110px;
+      margin-right: 40px;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
   }
 }

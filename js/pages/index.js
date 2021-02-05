@@ -1,5 +1,8 @@
 //index.js
 (function () {
+
+    $('input[type=tel]').mask('+7 (999) 999-99-99');
+
     //TABS
     let $jsTabs = $('.jsTabs');
 
@@ -42,7 +45,7 @@
 
     //SWIPERS
     const swiperPrice = new Swiper('.price__container', {
-        slidesPerView: '3',
+        slidesPerView: '1',
         spaceBetween: 20,
         watchSlidesVisibility: true,
         slideVisibleClass: 'pslide_visible',
@@ -61,6 +64,18 @@
                 syncSliderPrice(arr);
             },
         },
+        breakpoints: {
+            // when window width is >= 768px
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            // when window width is >= 480px
+            1200: {
+                slidesPerView: '3',
+                spaceBetween: 20,
+            },
+        }
     });
 
     window.swiperPrice = swiperPrice;
@@ -72,8 +87,20 @@
 
     const resultsSwiperThumbs = new Swiper('.rthumbs__container', {
         spaceBetween: 20,
-        slidesPerView: 6,
+        slidesPerView: 3,
         watchSlidesVisibility: true,
+        breakpoints: {
+            // when window width is >= 768px
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 20
+            },
+            // when window width is >= 480px
+            1200: {
+                slidesPerView: 6,
+                spaceBetween: 20,
+            },
+        }
     });
 
     const resultsSwiper = new Swiper('.rslider', {
@@ -109,10 +136,20 @@
     });
 
     const weSwiper = new Swiper('.we__container', {
-        slidesPerView: 4,
+        slidesPerView: 1.5,
         autoplay: {
             delay: 5000,
         },
+        breakpoints: {
+            // when window width is >= 768px
+            768: {
+                slidesPerView: 2.5,
+            },
+            // when window width is >= 480px
+            1200: {
+                slidesPerView: 4,
+            },
+        }
     });
 
 
@@ -134,4 +171,105 @@
 
 
     }
+
+    //POPUP
+    let popup = new Popup();
+    $('.jsCall').on('click', function (e){
+
+        let data = {
+            template: '.template',
+            content: '.callorder'
+        }
+
+        let html = new Template(data, this).html();
+        popup.open(html);
+
+        $(data.content).validate({
+            onfocusout: false,
+            submitHandler: function (form) {
+                $(form).find('.form__error').removeClass('active');
+
+                let data = $(form).serialize(),
+                    url = $(form).attr('action');
+
+                $.ajax({
+                    dataType: "json",
+                    type: "POST",
+                    url: url,
+                    data: data,
+                    success: function (result) {
+                        if (result.status) {
+                            $(form).append(new Template({
+                                template: '.template',
+                                content: '.success'
+                            }).html());
+                        } else {
+                            alert('Что-то пошло не так, попробуйте еще раз!!!');
+                        }
+                    },
+                    error: function (result) {
+                        alert('Что-то пошло не так, попробуйте еще раз!!!');
+                    }
+                });
+
+
+            },
+            invalidHandler: function (event, validator) {
+                $(this).find('.form__error').addClass('active');
+            },
+        });
+        $('input[type=tel]').mask('+7 (999) 999-99-99');
+
+    });
+
+    $('.what__form').validate({
+        onfocusout: false,
+        submitHandler: function (form) {
+            let data = $(form).serialize(),
+                url = $(form).attr('action');
+
+            $.ajax({
+                dataType: "json",
+                type: "POST",
+                url: url,
+                data: data,
+                success: function (result) {
+                    if (result.status) {
+
+                        let data = {
+                            template: '.template',
+                            content: '.success'
+                        }
+                        let html = new Template(data, this).html();
+                        popup.open(html);
+                    } else {
+                        alert('Что-то пошло не так, попробуйте еще раз!!!');
+                    }
+                },
+                error: function (result) {
+                    alert('Что-то пошло не так, попробуйте еще раз!!!');
+                }
+            });
+
+
+        },
+        invalidHandler: function (event, validator) {
+            $(this).find('.form__error').addClass('active');
+        },
+    });
+
+    //SELECT
+    let selects = document.querySelectorAll('.jsSelect');
+
+    selects.forEach(function (select){
+        new Select(select,'.jsSelect',{
+            selectedId: '1',
+            dataItems: document.querySelectorAll('.jsSelectItem'),
+            onSelect() {
+                console.log('Selected Item', this.current)
+            }
+        });
+    });
+
+
 }());

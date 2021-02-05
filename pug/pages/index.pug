@@ -9,6 +9,8 @@ block content
         section.index__banner
             .banner
                 .container
+                    .banner__img
+                        +image('images/content/banner/bg-sm.png')
                     h2.banner__title ИМПЛАНТАЦИЯ «ПОД КЛЮЧ»
                     .banner__small ОТ ЛУЧШЕЙ СТОМАТОЛОГИИ РФ С ПОЖИЗНЕННОЙ ГАРАНТИЕЙ
 
@@ -115,10 +117,10 @@ block content
                     h2.steps__title Цена зависит от вида имплантации
                     .steps__sub Мы подберем вид имплантации, который подойдет вам 100%
                     .steps__tabs.jsTabs
-                        .steps__sws
-                            button(type='button').steps__sw.active.jsSw Одномоментная
-                            button(type='button').steps__sw.jsSw Классическая
-                            button(type='button').steps__sw.jsSw Имплантация All on 4/6
+                        .steps__sws.jsSelect
+                            button(type='button').steps__sw.active.jsSw.jsSelectItem Одномоментная
+                            button(type='button').steps__sw.jsSw.jsSelectItem Классическая
+                            button(type='button').steps__sw.jsSw.jsSelectItem Имплантация All on 4/6
                         .steps__tabs
                             .steps__stab.stab.active.jsTab
                                 h3.stab__title Одномоментная имплантация
@@ -154,7 +156,7 @@ block content
                                                     <b>до 260.000 рублей</b> (иногда до 300.000)
                                                 p В “MN-dental”: от 34 т.р. 17т.р.
                                             .stprice__item
-                                                .stpprice__svg
+                                                .stprice__svg
                                                     <svg width="102" height="32" viewBox="0 0 102 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M0.871948 6.06521C21.9452 -0.598296 71.4478 -4.95989 100.872 30.9018" stroke="#3D8472" stroke-width="2"/>
                                                     </svg>
@@ -283,16 +285,17 @@ block content
                 .index__comps
                     .comps
                         h2.comps__title Клиника Империя работает со всеми мировыми производителями имплантатов
-                        .comps__sub Более 30 производителей
-                        .comps__list
-                            each i in [1,2,3,4,5,6,7]
-                                a(href='/').comps__item
-                                    +image('images/content/comps/' + i + '.jpg')
+                        .comps__wrap
+                            .comps__sub Более 30 производителей
+                            .comps__list
+                                each i in [1,2,3,4,5,6,7]
+                                    a(href='/').comps__item
+                                        +image('images/content/comps/' + i + '.jpg')
         //- advants
-        section__advants
+        section.index__advants
             .advants
                 .container
-                    h2.advants__title Мы дорожим репутацией и делаем свою работу первоклассно!
+                    h2.advants__title Преимущества нашей клиники
                     .advants__sub Мы дорожим репутацией и делаем свою работу первоклассно!
                     .advants__list
                         each i,x in advantsList
@@ -599,7 +602,7 @@ block content
 
                                         .rev__grid
                                             .rev__left
-                                                .rev__content.content
+                                                .rev__content
                                                     p В стоматологической клинике «Менделеев» мне сделали одномоментную имплантацию двух нижних зубов. Операцию проводил Лушанин Михаил Сергеевич, виртуозно справился со своей работой. А Лавский Евгений Владимирович, стоматолог-ортопед, прекрасно ее закончил. Очень благодарна обоим врачам за их профессионализм, внимание, бережное отношение.
                                                     p Хочется выделить то, что внимательное и чуткое отношение к пациенту со стороны всего персонала клиники - это абсолютная норма. Редко сейчас, к сожалению, такое встретишь, поэтому это очень ценно, для меня по крайней мере. В клинике современное оборудование, всё очень чисто, приятно. Приём ведется в точно назначенное время. Консультант обязательно связывается по телефону за день до приёма с целью напоминания и уточнения информации.
                                                     p Желаю клинике и всему персоналу дальнейшего развития и успехов!

@@ -1,124 +1,218 @@
-.banner{
+.banner {
   background-color: #f6f6f6;
+  @include lg-block {
+    background: $bg;
+  }
 
-  .container{
+  .container {
     padding-top: 50px;
     padding-bottom: 100px;
     background: url("/images/content/banner/bg.png") right 0 no-repeat;
     background-size: contain;
+    @include lg-block {
+      background-size: auto;
+      background: url("/images/content/banner/bg-lg.png") right 0 no-repeat;
+      padding-top: 70px;
+      padding-bottom: 70px;
+    }
+    @include sm-block {
+      background: none;
+      padding-top: 20px;
+    }
   }
 
-  &__title{
+  &__img {
+    display: none;
+    @include sm-block {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
     color: #333333;
     font-size: 48px;
     font-weight: 700;
-    line-height: lh(48,58);
+    line-height: lh(48, 58);
+    margin-bottom: 10px;
+    @include lg-block {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    @include sm-block {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
   }
 
-  &__small{
+  &__small {
     color: #4f4f4f;
     margin-bottom: 15px;
-  }
-
-  &__sub{
-    display: flex;
-    margin-bottom: 60px;
-
-    &-big{
-      margin-right: 35px;
-      position: relative;
+    @include lg-block {
+      font-size: 14px;
+      margin-bottom: 35px;
+    }
+    @include sm-block {
+      margin-bottom: 25px;
     }
 
-    &-perc{
+  }
+
+  &__sub {
+    display: flex;
+    margin-bottom: 60px;
+    @include lg-block {
+      flex-direction: column;
+      margin-bottom: 110px;
+    }
+    @include sm-block {
+      margin-bottom: 20px;
+    }
+
+    &-big {
+      margin-right: 35px;
+      position: relative;
+      @include lg-block {
+        order: 1;
+        margin-right: 0;
+      }
+    }
+
+    &-perc {
       color: $green;
       font-size: 54px;
       font-weight: 700;
       line-height: 1;
+      @include lg-block {
+        margin-bottom: 10px;
+      }
     }
 
-    &-pos{
+    &-pos {
       color: #4f4f4f;
       font-size: 18px;
       font-weight: 700;
       position: absolute;
-      top: 100%;
+      top: calc(100% + 5px);
       left: 0;
       white-space: nowrap;
+      @include lg-block {
+        font-size: 14px;
+        position: static;
+      }
     }
 
-    &-txt{
+    &-txt {
       color: #4f4f4f;
       font-size: 18px;
+      @include lg-block {
+        margin-bottom: 30px;
+      }
     }
   }
 
-  &__list{
+  &__list {
     display: grid;
     grid-gap: 25px;
     margin-bottom: 30px;
+    @include lg-block {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+    @include sm-block {
+      grid-template-columns: 1fr;
+      grid-gap: 35px;
+    }
   }
 
-  &__subtitle{
+  &__subtitle {
     color: #333333;
     font-size: 20px;
     font-weight: 700;
+    @include lg-block {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
   }
 
-  &__ul{
+  &__ul {
     font-size: 14px;
     margin-bottom: 35px;
   }
 
 }
 
-.bitem{
+.bitem {
   width: 513px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   display: grid;
-  grid-template-columns: 180px 1fr;
+  grid-template-columns: 180fr  333fr;
+  @include lg-block {
+    width: auto;
+    border-radius: 10px;
+  }
 
-  &__left{
+
+  &__left {
     background-color: $green;
     border-radius: 20px 0 0 20px;
     position: relative;
+    @include lg-block {
+      border-radius: 10px 0 0 10px;
+    }
   }
 
-  &__img{
+  &__img {
     position: absolute;
     left: 8px;
     bottom: 0;
 
-    img{
+    img {
       display: block;
     }
   }
 
-  &__right{
+  &__right {
     background-color: #f6f6f6;
     border-radius: 0 20px 20px 0;
     padding: 15px 40px 15px 20px;
+    @include lg-block {
+      padding: 10px;
+      border-radius: 0 10px 10px 0;
+    }
   }
 
-  &__name{
+  &__name {
     color: #000000;
     font-size: 24px;
     font-weight: 600;
     line-height: 129%;
+    @include lg-block {
+      font-size: 13px;
+    }
   }
 
-  &__txt{
+  &__txt {
     color: #828282;
     font-size: 14px;
     padding-bottom: 7px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     margin-bottom: 7px;
+    @include lg-block {
+      font-size: 12px;
+    }
   }
 
-  &__desc{
+  &__desc {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 0 20px;
+    @include lg-block {
+      font-size: 12px;
+      grid-gap: 0 5px;
+    }
   }
 
 }

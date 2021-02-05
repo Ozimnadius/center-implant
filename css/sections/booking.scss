@@ -3,14 +3,21 @@
   margin: 0 auto;
   box-shadow: 0 20px 40px rgba(21, 56, 105, 0.4);
   border-radius: 30px;
-  background: $green url("/images/content/booking/img.png") left 13px center no-repeat;
+  background: $green url("/images/content/booking/img.png") left 13px bottom no-repeat;
   padding: 40px 60px 40px 300px;
+  @include lg-block {
+    padding: 25px 125px 25px 280px;
+  }
 
   &__grid {
     display: grid;
     grid-template-columns: 1fr 195px;
     grid-gap: 25px;
     align-items: center;
+    @include lg-block {
+      grid-template-columns: 1fr;
+      grid-gap: 15px;
+    }
   }
 
   &__title {
@@ -41,6 +48,9 @@
     color: $bg;
     font-size: 14px;
     font-weight: 700;
+    @include lg-block{
+      width: 195px;
+    }
   }
 
 }

@@ -1,75 +1,91 @@
-.we{
+.we {
   background-color: #eef2f4;
   padding-top: 90px;
   padding-bottom: 65px;
+  @include lg-block {
+    padding-top: 70px;
+    padding-bottom: 90px;
+  }
 
-  &__title{
+  &__title {
     max-width: 781px;
     font-size: 40px;
     font-weight: 700;
-    line-height: lh(40,50);
+    line-height: lh(40, 50);
     margin-bottom: 25px;
+    @include lg-block {
+      font-size: 32px;
+      margin-bottom: 35px;
+    }
   }
 
-  &__sub{
+  &__sub {
     max-width: 1180px;
     font-size: 24px;
     margin-bottom: 55px;
   }
 
-  &__place{
+  &__place {
     display: flex;
     align-items: center;
 
-    &-img{
+    &-img {
+      margin-left: 30px;
       margin-right: 50px;
-      img{
+      flex-shrink: 0;
+
+      img {
         display: block;
       }
     }
 
-    &-title{
+    &-title {
       font-size: 26px;
       font-weight: 700;
       margin-bottom: 10px;
     }
 
-    &-txt{
+    &-txt {
       max-width: 998px;
       font-size: 18px;
     }
   }
 
-  &__slider{
+  &__slider {
     margin-top: 70px;
     margin-bottom: 60px;
   }
 
-  &__advantages{
+  &__advantages {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
+    @include lg-block {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 40px 20px;
+    }
   }
 }
 
-.weadv{
+.weadv {
   display: flex;
 
-  &__img{
+  &__img {
     margin-right: 25px;
     flex-shrink: 0;
-    img{
+
+    img {
       display: block;
     }
   }
 
-  &__title{
+  &__title {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 5px;
   }
 
-  &__txt{
+  &__txt {
     color: #828282;
     font-weight: 500;
   }

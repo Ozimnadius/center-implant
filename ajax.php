@@ -4,13 +4,19 @@ header('Content-Type: application/json');
 $data = $_POST;
 $action = $data['action'];
 switch ($action) {
-    case 'callorderSubmit':
+    case 'callorder':
         echo json_encode(array(
-            'status' => true,
-            'html' => '<div class="callorder__success">Спасибо мы скоро с Вами свяжемся.</div>'
+            'status' => true
         ));
         exit();
         break;
+    case 'feed':
+        echo json_encode(array(
+            'status' => true
+        ));
+        exit();
+        break;
+
     default:
         echo json_encode(array(
             'status' => false,

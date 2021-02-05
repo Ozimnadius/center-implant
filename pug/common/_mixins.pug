@@ -30,7 +30,8 @@ mixin what(cls)
             a(href='tel:+7(495)186-22-41') +7 (495) 186-22-41
             br
             | или оставьте заявку, мы вам перезвоним
-          form.what__form
+          form(action='ajax.php' method='post').what__form
+            input(type='hidden' name='action' value='feed')
             .what__accept
               label.accept
                 input(type='checkbox' name='accept' checked).accept__input
@@ -41,11 +42,9 @@ mixin what(cls)
                     </svg>
                   span.accept__txt.what__accept-txt Нажимая кнопку "Записаться на просмотр", даю согласие на обработку моих персональных данных
 
-
-
             .what__fields
               .what__field
-                input(type='tel' name='tel' placeholder='Номер телефона').what__input
+                input(type='tel' name='tel' placeholder='Номер телефона' data-rule-required="true" data-msg-required="Введите телефон").what__input
               .what__field
                 button(type='submit').what__submit.btn ЗАПИСАТЬСЯ НА ПРОСМОТР
         .what__right

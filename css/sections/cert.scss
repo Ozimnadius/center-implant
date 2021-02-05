@@ -1,57 +1,78 @@
-.cert{
+.cert {
   background: url("/images/content/cert/bg.jpg") 0 0 no-repeat;
   background-size: cover;
-  padding: 40px 50px 65px 60px;
+  padding: 55px 50px 65px 60px;
   border-radius: 20px;
   overflow: hidden;
   color: $bg;
 
-  &__grid{
+  @include lg-block {
+    background: linear-gradient(99.24deg, #2A8277 -0.01%, #082C34 100.01%);
+    padding: 55px 70px 60px 30px;
+  }
+
+  &__grid {
     display: grid;
     grid-template-columns: 1fr 220px;
     grid-template-rows: auto auto auto;
     grid-template-areas: 'title img' 'sub img' 'list img';
     grid-gap: 25px;
     margin-bottom: 25px;
+    @include lg-block {
+      grid-template-areas: 'title title' 'sub img' 'list img';
+      grid-gap: 20px 75px;
+      margin-bottom: 40px;
+    }
   }
 
-  &__title{
+  &__title {
     grid-area: title;
     font-size: 30px;
     font-weight: 700;
-    line-height: lh(30,37);
+    line-height: lh(30, 37);
+    @include lg-block {
+      font-size: 28px;
+    }
   }
 
-  &__sub{
+  &__sub {
     grid-area: sub;
     color: #dee5e9;
   }
 
-  &__list{
+  &__list {
     grid-area: list;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 40px;
+    @include lg-block {
+      grid-template-columns: 1fr;
+      grid-gap: 25px;
+      padding-right: 50px;
+    }
   }
 
-  &__item{
+  &__item {
     display: flex;
     align-items: center;
     color: #dee5e9;
     font-size: 15px;
 
-    svg{
+    svg {
       flex-shrink: 0;
       margin-right: 20px;
     }
   }
 
-  &__img{
+  &__img {
     grid-area: img;
     align-self: flex-end;
+    @include lg-block{
+        align-self: flex-start;
+    }
   }
 
-  &__txt{
+  &__txt {
     color: #dee5e9;
     font-size: 18px;
     font-weight: 600;

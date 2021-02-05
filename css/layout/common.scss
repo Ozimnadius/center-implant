@@ -13,6 +13,13 @@
   font-size: 18px;
   font-weight: 500;
 
+  @include sm-block{
+    width: 258px;
+    height: 56px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+
   svg{
     display: block;
   }

@@ -1,22 +1,42 @@
 .steps {
   padding-top: 100px;
   padding-bottom: 160px;
+  @include lg-block{
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
 
   .container {
     max-width: 1220px;
   }
+
 
   &__title {
     text-align: center;
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 10px;
+    @include lg-block{
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
   }
 
   &__sub {
     text-align: center;
     font-size: 24px;
     margin-bottom: 60px;
+    @include lg-block{
+      font-size: 20px;
+      margin-bottom: 50px;
+    }
+  }
+
+  &__select{
+    display: none;
+    @include sm-block{
+      display: block;
+    }
   }
 
   &__sws {
@@ -27,8 +47,10 @@
     padding: 25px 50px;
     border-radius: 10px 10px 0 0;
     font-size: 20px;
-
-
+    @include lg-block{
+      font-size: 16px;
+      padding: 20px 30px;
+    }
 
     &.active {
       background-color: #eef2f4;
@@ -43,25 +65,39 @@
 .stab {
   display: none;
   border-radius: 10px;
+  padding: 70px;
+  background-color: #eef2f4;
+  @include lg-block{
+    padding: 70px 30px 40px 30px;
+  }
 
   &.active {
     display: block;
-    background-color: #eef2f4;
-    padding: 70px;
+
   }
 
   &__title {
     font-size: 36px;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    @include lg-block{
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
   }
 
   &__rows {
     margin-bottom: 25px;
+    @include lg-block{
+      margin-bottom: 60px;
+    }
   }
 
   &__row {
     margin-bottom: 15px;
+    @include lg-block{
+      margin-bottom: 50px;
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -77,12 +113,19 @@
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 10px;
+    @include lg-block{
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
   }
 
   &__grid, &__ol {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 50px;
+    @include lg-block{
+        grid-gap: 20px;
+    }
   }
 
   &__ol {
@@ -94,6 +137,9 @@
     display: flex;
     align-items: center;
     font-size: 18px;
+    @include lg-block{
+      font-size: 14px;
+    }
 
     &:before {
       counter-increment: li;
@@ -111,6 +157,11 @@
       align-items: center;
       justify-content: center;
       margin-right: 20px;
+      @include lg-block{
+        width: 47px;
+        height: 47px;
+        font-size: 28px;
+      }
     }
   }
 
@@ -128,6 +179,11 @@
     height: 79px;
     border-radius: 50%;
     overflow: hidden;
+    @include lg-block{
+      width: 48px;
+      height: 48px;
+      margin-right: 10px;
+    }
 
     &-big {
       position: absolute;
@@ -139,6 +195,11 @@
       width: 220px;
       height: 220px;
 
+      @include lg-block{
+        width: 135px;
+        height: 135px;
+        bottom: 0;
+      }
       img {
         border-radius: 50%;
         overflow: hidden;
@@ -154,6 +215,9 @@
 
   &__txt {
     font-size: 18px;
+    @include lg-block{
+      font-size: 14px;
+    }
   }
 }
 
@@ -163,6 +227,9 @@
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 15px;
+    @include lg-block{
+      font-size: 18px;
+    }
   }
 
   &__grid {
@@ -172,6 +239,9 @@
 
   &__item {
     margin-right: 40px;
+  @include lg-block{
+    font-size: 14px;
+  }
 
     &:last-child {
       margin-right: 0;
@@ -181,6 +251,9 @@
       border-radius: 10px;
       background-color: $green;
       padding: 20px 125px 20px 35px;
+      @include lg-block{
+        padding: 15px 20px;
+      }
 
       p {
         color: $bg;
@@ -194,9 +267,25 @@
 
   }
 
+  &__svg{
+    @include lg-block{
+      width: 64px;
+      height: 20px;
+    }
+
+    svg{
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
   &__btn {
     margin-left: 45px;
     font-size: 20px;
     text-decoration: underline;
+    @include lg-block{
+      font-size: 18px;
+    }
   }
+
 }

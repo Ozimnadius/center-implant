@@ -20,6 +20,7 @@ $font-size: 16px;
 
 //sections
 @import "sections/header";
+@import "sections/select";
 @import "sections/index";
 @import "sections/banner";
 @import "sections/att";
@@ -37,6 +38,7 @@ $font-size: 16px;
 @import "sections/specs";
 @import "sections/we";
 @import "sections/faq";
+@import "sections/popup";
 @import "sections/footer";
 
 .debug {
