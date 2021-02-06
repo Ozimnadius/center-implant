@@ -1,7 +1,7 @@
 .docs {
   padding-top: 120px;
   padding-bottom: 100px;
-  @include lg-block{
+  @include lg-block {
     padding-top: 80px;
     padding-bottom: 40px;
   }
@@ -19,6 +19,19 @@
   &__sws {
     display: flex;
     align-items: flex-end;
+    @include sm-block {
+      flex-direction: column;
+      align-items: stretch;
+      margin-bottom: 20px;
+    }
+
+    &.open{
+      .docs__sw{
+        @include sm-block{
+          display: flex;
+        }
+      }
+    }
   }
 
   &__sw {
@@ -29,8 +42,17 @@
     justify-content: center;
     align-items: center;
     padding: 20px 40px;
-    @include lg-block{
+    @include lg-block {
       padding: 15px 30px;
+    }
+    @include sm-block{
+      text-align: left;
+      justify-content: flex-start;
+      display: none;
+      padding: 10px 20px 10px 10px;
+      border-radius: 10px;
+      box-shadow: none;
+      border: 1px solid #eef2f4;
     }
 
 
@@ -47,9 +69,21 @@
       border-radius: 50%;
       overflow: hidden;
 
-      @include lg-block{
+      @include lg-block {
         width: 56px;
         height: 56px;
+      }
+    }
+
+    &-name{
+      display: none;
+      font-weight: bold;
+      color: #333333;
+      margin-left: 20px;
+
+
+      @include sm-block{
+        display: block;
       }
     }
 
@@ -58,8 +92,23 @@
       padding: 25px 50px;
       z-index: 20;
       box-shadow: none;
-      @include lg-block{
+      @include lg-block {
         padding: 15px 30px;
+      }
+      @include sm-block{
+        display: flex;
+        padding: 10px 20px 10px 15px;
+        order: -1;
+
+        &:after{
+          content: '';
+          width: 0;
+          height: 0;
+          margin-left: auto;
+          border-style: solid;
+          border-width: 8px 5px 0 5px;
+          border-color: #E79089 transparent transparent transparent;
+        }
       }
 
       .docs {
@@ -69,7 +118,7 @@
             height: 95px;
             border-color: $btn;
             border-width: 6px;
-            @include lg-block{
+            @include lg-block {
               width: 72px;
               height: 72px;
             }
@@ -79,14 +128,15 @@
     }
   }
 
-  &__tabs{
+  &__tabs {
     position: relative;
     z-index: 20;
   }
 
-  &__tab{
+  &__tab {
     display: none;
-    &.active{
+
+    &.active {
       display: block;
     }
   }
@@ -94,77 +144,78 @@
 
 .dtab {
   background-color: #eef2f4;
-  border-radius:0 10px 10px 10px;
+  border-radius: 0 10px 10px 10px;
   padding: 65px 25px 85px 60px;
-  @include lg-block{
+  @include lg-block {
     padding: 60px 15px;
   }
 
-  &__top{
+  &__top {
     @include u-row-flex(50px);
     margin-bottom: 50px;
     color: #333333;
-    @include lg-block{
+    @include lg-block {
       @include u-row-flex(15px);
       margin-bottom: 30px;
     }
   }
 
-  &__title{
+  &__title {
     font-size: 30px;
     font-weight: 700;
-    @include lg-block{
+    @include lg-block {
       font-size: 24px;
     }
   }
 
-  &__sub{
+  &__sub {
     max-width: 567px;
     font-size: 18px;
-    @include lg-block{
+    @include lg-block {
       font-size: 14px;
     }
   }
 
-  &__bottom{
+  &__bottom {
     @include u-row-flex(50px);
-    @include lg-block{
+    @include lg-block {
       @include u-row-flex(15px);
     }
   }
 
-  &__left{
+  &__left {
     @include u-col(50px);
-    @include u-size(3,10,50px);
-    @include lg-block{
+    @include u-size(3, 10, 50px);
+    @include lg-block {
       @include u-col(15px);
-      @include u-size(3.2,10,15px);
+      @include u-size(3.2, 10, 15px);
     }
   }
 
-  &__right{
+  &__right {
     @include u-col(50px);
-    @include u-size(7,10,50px);
-    @include lg-block{
+    @include u-size(7, 10, 50px);
+    @include lg-block {
       @include u-col(15px);
-      @include u-size(6.8,10,15px);
+      @include u-size(6.8, 10, 15px);
     }
   }
 
-  &__img{
+  &__img {
     margin-bottom: 25px;
     border-radius: 10px;
     overflow: hidden;
-    img{
+
+    img {
       display: block;
     }
   }
 
-  &__txt{
+  &__txt {
     opacity: 0.6;
     color: #333333;
     font-style: italic;
-    @include lg-block{
+    @include lg-block {
       font-size: 14px;
     }
   }
@@ -179,36 +230,36 @@
 .dslide {
   box-sizing: border-box;
 
-  &__top{
+  &__top {
     margin-bottom: 25px;
-    @include lg-block{
+    @include lg-block {
       margin-bottom: 15px;
     }
   }
 
-  &__title{
+  &__title {
     color: #333333;
     font-size: 20px;
     font-weight: 700;
-    @include lg-block{
+    @include lg-block {
       font-size: 16px;
     }
   }
 
-  &__grid{
+  &__grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 25px;
-    @include lg-block{
-        grid-gap: 10px;
+    @include lg-block {
+      grid-gap: 10px;
     }
   }
 
-  &__bottom{
+  &__bottom {
     position: relative;
   }
 
-  &__week{
+  &__week {
     position: absolute;
     top: 0;
     left: 50%;
@@ -223,47 +274,49 @@
     text-align: center;
   }
 
-  &__block{
+  &__block {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
-    @include lg-block{
+    @include lg-block {
       margin-bottom: 20px;
     }
   }
 
-  &__img{
+  &__img {
     border: 3px solid #E79089;
     border-radius: 12px;
     overflow: hidden;
-    img{
+
+    img {
       display: block;
       width: 100%;
     }
   }
 
-  &__txt{
+  &__txt {
     opacity: 0.6;
     color: #333333;
     font-size: 14px;
     margin-bottom: 15px;
-    @include lg-block{
+    @include lg-block {
       font-size: 12px;
     }
   }
 
-  &__li{
+  &__li {
     color: #333333;
     font-size: 14px;
     margin-bottom: 10px;
-    @include lg-block{
+    @include lg-block {
       font-size: 12px;
     }
-    &:last-child{
+
+    &:last-child {
       margin-bottom: 0;
     }
 
-    &:before{
+    &:before {
       top: 5px;
       background-color: #ffb706;
     }

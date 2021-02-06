@@ -6,6 +6,7 @@
   overflow: hidden;
   color: $bg;
 
+
   @include lg-block {
     background: linear-gradient(99.24deg, #2A8277 -0.01%, #082C34 100.01%);
     padding: 55px 70px 60px 30px;
@@ -67,8 +68,8 @@
   &__img {
     grid-area: img;
     align-self: flex-end;
-    @include lg-block{
-        align-self: flex-start;
+    @include lg-block {
+      align-self: flex-start;
     }
   }
 

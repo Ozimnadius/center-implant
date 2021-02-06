@@ -31,7 +31,7 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-gap: 40px;
-    @include lg-block{
+    @include to(1400px){
         grid-template-columns: 1fr;
     }
   }

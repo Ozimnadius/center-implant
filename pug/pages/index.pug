@@ -117,7 +117,7 @@ block content
                     h2.steps__title Цена зависит от вида имплантации
                     .steps__sub Мы подберем вид имплантации, который подойдет вам 100%
                     .steps__tabs.jsTabs
-                        .steps__sws.jsSelect
+                        .steps__sws.jsSws
                             button(type='button').steps__sw.active.jsSw.jsSelectItem Одномоментная
                             button(type='button').steps__sw.jsSw.jsSelectItem Классическая
                             button(type='button').steps__sw.jsSw.jsSelectItem Имплантация All on 4/6
@@ -375,11 +375,15 @@ block content
                     - var arr = [1,2,3,4,5,6]
                     h2.docs__title Врачи и примеры работ
                     .docs__tabs.jsTabs
-                        .docs__sws
+                        .docs__sws.jsSws
                             each i in arr
                                 button(type='button' class=(i == 1) ? 'active' : '').docs__sw.jsSw
                                     span.docs__sw-img
                                         +image('images/content/docs/' + i + '.jpg')
+                                    span.docs__sw-name
+                                        |Хасянов
+                                        br
+                                        |Дамир Шамилевич
                         .docs__tabs
                             each tab in arr
                                 div(class=(tab == 1) ? 'active' : '').docs__tab.jsTab

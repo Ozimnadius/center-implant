@@ -1,0 +1,10 @@
+<svg width="110" height="10" viewBox="0 0 110 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g opacity="0.5">
+<circle cx="5" cy="5" r="5" fill="#E79089"/>
+<circle opacity="0.8" cx="25" cy="5" r="5" fill="#E79089"/>
+<circle opacity="0.6" cx="45" cy="5" r="5" fill="#E79089"/>
+<circle opacity="0.5" cx="65" cy="5" r="5" fill="#E79089"/>
+<circle opacity="0.4" cx="85" cy="5" r="5" fill="#E79089"/>
+<circle opacity="0.2" cx="105" cy="5" r="5" fill="#E79089"/>
+</g>
+</svg>

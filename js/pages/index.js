@@ -9,13 +9,19 @@
     $jsTabs.each(function (x, i) {
         let $jsTab = $(i),
             $tabs = $jsTab.find('.jsTab'),
-            $sws = $jsTab.find('.jsSw');
+            $swsList = $jsTab.find('.jsSws'),
+            $sws = $swsList.find('.jsSw');
 
         $sws.on('click', function (e) {
             let sw = $(this),
                 index = $sws.index(sw),
                 tab = $($tabs[index]);
 
+            if(sw.hasClass('active')){
+                $swsList.toggleClass('open');
+            } else{
+                $swsList.removeClass('open');
+            }
             $sws.removeClass('active');
             $tabs.removeClass('active');
             sw.addClass('active');
@@ -259,17 +265,6 @@
     });
 
     //SELECT
-    let selects = document.querySelectorAll('.jsSelect');
-
-    selects.forEach(function (select){
-        new Select(select,'.jsSelect',{
-            selectedId: '1',
-            dataItems: document.querySelectorAll('.jsSelectItem'),
-            onSelect() {
-                console.log('Selected Item', this.current)
-            }
-        });
-    });
 
 
 }());
