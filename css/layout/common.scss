@@ -12,12 +12,17 @@
   color: $bg;
   font-size: 18px;
   font-weight: 500;
+  @include tr;
 
   @include sm-block{
     width: 258px;
     height: 56px;
     border-radius: 10px;
     font-size: 14px;
+  }
+
+  &:hover{
+    opacity: .7;
   }
 
   svg{
@@ -29,6 +34,9 @@
   padding-left: 25px;
   position: relative;
   font-size: 20px;
+  @include sm-block{
+    font-size: 18px;
+  }
 
   &:before {
     content: '';
@@ -40,6 +48,9 @@
     position: absolute;
     top: 9px;
     left: 0;
+    @include sm-block{
+      top: 7px;
+    }
   }
 }
 

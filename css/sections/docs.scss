@@ -5,6 +5,9 @@
     padding-top: 80px;
     padding-bottom: 40px;
   }
+  @include sm-block{
+    padding-top: 30px;
+  }
 
   max-width: 1180px;
   margin: 0 auto;
@@ -14,6 +17,11 @@
     font-weight: 700;
     text-align: center;
     margin-bottom: 80px;
+    @include sm-block{
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
   }
 
   &__sws {
@@ -85,6 +93,9 @@
       @include sm-block{
         display: block;
       }
+      @include sm-block{
+        font-size: 16px;
+      }
     }
 
     &.active {
@@ -122,6 +133,11 @@
               width: 72px;
               height: 72px;
             }
+            @include sm-block{
+              width: 60px;
+              height: 60px;
+              border-width: 4px;
+            }
           }
         }
       }
@@ -149,6 +165,11 @@
   @include lg-block {
     padding: 60px 15px;
   }
+  @include sm-block{
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 
   &__top {
     @include u-row-flex(50px);
@@ -158,6 +179,9 @@
       @include u-row-flex(15px);
       margin-bottom: 30px;
     }
+    @include sm-block{
+      margin-bottom: 20px;
+    }
   }
 
   &__title {
@@ -165,6 +189,9 @@
     font-weight: 700;
     @include lg-block {
       font-size: 24px;
+    }
+    @include sm-block{
+      display: none;
     }
   }
 
@@ -190,6 +217,10 @@
       @include u-col(15px);
       @include u-size(3.2, 10, 15px);
     }
+    @include sm-block{
+      @include u-size(10, 10, 15px);
+      margin-bottom: 20px;
+    }
   }
 
   &__right {
@@ -199,14 +230,23 @@
       @include u-col(15px);
       @include u-size(6.8, 10, 15px);
     }
+    @include sm-block{
+      @include u-size(10, 10, 15px);
+    }
   }
 
   &__img {
     margin-bottom: 25px;
     border-radius: 10px;
     overflow: hidden;
+    @include sm-block{
+      width: 255px;
+      margin: 0 auto;
+      margin-bottom: 35px;
+    }
 
     img {
+      width: 100%;
       display: block;
     }
   }
@@ -217,6 +257,11 @@
     font-style: italic;
     @include lg-block {
       font-size: 14px;
+    }
+    @include sm-block{
+      width: 260px;
+      margin: 0 auto;
+      text-align: center;
     }
   }
 
@@ -234,6 +279,9 @@
     margin-bottom: 25px;
     @include lg-block {
       margin-bottom: 15px;
+    }
+    @include sm-block{
+      display: none;
     }
   }
 
@@ -253,6 +301,34 @@
     @include lg-block {
       grid-gap: 10px;
     }
+    @include sm-block{
+           grid-template-columns: 1fr;
+      grid-gap: 30px;
+    }
+  }
+
+  &__col{
+    &_sm{
+      display: none;
+      @include sm-block{
+        display: block;
+      }
+      &:before{
+        display: none!important;
+      }
+    }
+
+    @include sm-block{
+        &:before{
+          content: attr(data-title);
+          display: block;
+          color: #333333;
+          font-size: 20px;
+          font-weight: 700;
+          margin-bottom: 20px;
+        }
+    }
+
   }
 
   &__bottom {
@@ -272,6 +348,24 @@
     font-size: 14px;
     font-weight: 700;
     text-align: center;
+    @include sm-block{
+      display: none;
+    }
+
+    &_sm {
+      @include sm-block{
+        display: flex;
+      }
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: static;
+      border-radius: 0;
+      transform: none;
+      height: 60px;
+      padding: 0;
+      font-size: 16px;
+    }
   }
 
   &__block {
@@ -280,6 +374,17 @@
     margin-bottom: 40px;
     @include lg-block {
       margin-bottom: 20px;
+    }
+  }
+
+  &__btn{
+    @include tr;
+    @include sm-block{
+      display: none;
+    }
+
+    &:hover{
+      opacity: .8;
     }
   }
 

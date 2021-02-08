@@ -37,6 +37,13 @@
     background-color: $bg;
     border: 1px solid #e0e0e0;
     border-radius: 12px;
+    @include sm-block{
+      min-width: initial;
+      min-height: initial;
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+    }
   }
 }
 
@@ -46,6 +53,9 @@
   max-height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
+  @include sm-block{
+    padding: 40px 20px;
+  }
 
   &__title {
     text-align: center;

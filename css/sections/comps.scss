@@ -10,6 +10,11 @@
       font-size: 30px;
       margin-bottom: 35px;
     }
+    @include sm-block{
+      font-size: 20px;
+      margin-bottom: 40px;
+      text-align: center;
+    }
   }
 
   &__wrap{
@@ -19,6 +24,11 @@
       padding-right: 0;
       background: linear-gradient(99.24deg, #2A8277 -0.01%, #082C34 100.01%);
     }
+    @include sm-block{
+      margin: 0 -10px;
+      padding: 40px 10px;
+      padding-bottom: 20px;
+    }
   }
 
   &__sub{
@@ -27,6 +37,9 @@
     margin-bottom: 25px;
     @include lg-block{
       color: $bg;
+    }
+    @include sm-block{
+      font-size: 20px;
     }
   }
 
@@ -40,6 +53,10 @@
       overflow-x: auto;
       overflow-y: hidden;
       grid-gap: 0;
+    }
+    @include sm-block{
+      flex-wrap: wrap;
+      justify-content: space-around;
     }
   }
 
@@ -55,6 +72,12 @@
       &:last-child{
         margin-right: 0;
       }
+    }
+    @include sm-block{
+      width: 100px;
+      height: 80px;
+      margin: 0;
+      margin-bottom: 20px;
     }
   }
 }

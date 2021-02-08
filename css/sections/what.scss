@@ -7,10 +7,18 @@
     background: linear-gradient(360deg, #13625B 0%, rgba(60, 140, 134, 0) 48.33%),linear-gradient(99.24deg, #2A8277 -0.01%, #082C34 100.01%);;
     padding-top: 60px;
   }
+  @include sm-block{
+    padding-top: 45px;
+    padding-bottom: 230px;
+  }
 
   &_mbsm{
     padding-top: 60px;
     padding-bottom: 100px;
+    @include sm-block{
+      padding-top: 35px;
+      padding-bottom: 35px;
+    }
   }
 
   &__grid {
@@ -19,6 +27,9 @@
     grid-gap: 75px;
     @include lg-block{
         grid-template-columns: 1fr;
+    }
+    @include sm-block{
+        grid-gap: 20px;
     }
   }
 
@@ -31,6 +42,9 @@
     line-height: lh(40, 52);
     @include lg-block{
       font-size: 32px;
+    }
+    @include sm-block{
+      font-size: 20px;
     }
   }
 
@@ -48,10 +62,16 @@
     font-size: 22px;
     font-weight: 700;
     margin-bottom: 35px;
+    @include sm-block{
+      font-size: 18px;
+    }
 
     a {
       color: $btn;
       font-size: 24px;
+      @include sm-block{
+        font-size: 18px;
+      }
     }
   }
 
@@ -72,6 +92,10 @@
     display: grid;
     grid-template-columns: 1fr 300px;
     grid-gap: 40px;
+    @include sm-block{
+        grid-template-columns: 1fr;
+      grid-gap: 20px;
+    }
   }
 
   &__input{
@@ -81,9 +105,20 @@
     background-color: $bg;
     padding: 0 20px;
     border: 1px solid transparent;
+    @include sm-block{
+      font-size: 16px;
+      text-align: center;
+    }
 
     &.error{
       border-color: #EB5757;
+    }
+  }
+
+  &__submit{
+    @include sm-block{
+      width: 100%;
+      font-size: 16px;
     }
   }
 
@@ -95,6 +130,9 @@
     @include lg-block{
       max-width: 600px;
       margin: 0 auto;
+    }
+    @include sm-block{
+      border-radius: 10px;
     }
 
     &:before{
@@ -128,6 +166,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    @include tr;
+    &:hover{
+      opacity: .8;
+    }
   }
 
 }

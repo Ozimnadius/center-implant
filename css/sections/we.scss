@@ -6,6 +6,10 @@
     padding-top: 70px;
     padding-bottom: 90px;
   }
+  @include sm-block{
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
 
   &__title {
     max-width: 781px;
@@ -17,22 +21,38 @@
       font-size: 32px;
       margin-bottom: 35px;
     }
+    @include sm-block{
+      font-size: 24px;
+      margin-bottom: 25px;
+    }
   }
 
   &__sub {
     max-width: 1180px;
     font-size: 24px;
     margin-bottom: 55px;
+    @include sm-block{
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
   }
 
   &__place {
     display: flex;
     align-items: center;
+    @include sm-block{
+        flex-direction: column;
+    }
 
     &-img {
       margin-left: 30px;
       margin-right: 50px;
       flex-shrink: 0;
+      @include sm-block{
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 60px;
+      }
 
       img {
         display: block;
@@ -43,17 +63,27 @@
       font-size: 26px;
       font-weight: 700;
       margin-bottom: 10px;
+      @include sm-block{
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
     }
 
     &-txt {
       max-width: 998px;
       font-size: 18px;
+      @include sm-block{
+        font-size: 16px;
+      }
     }
   }
 
   &__slider {
     margin-top: 70px;
     margin-bottom: 60px;
+    @include sm-block{
+      margin-bottom: 30px;
+    }
   }
 
   &__advantages {
@@ -63,6 +93,11 @@
     @include lg-block {
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 40px 20px;
+    }
+    @include sm-block{
+        grid-template-columns: 1fr;
+      grid-gap: 20px;
+
     }
   }
 }
@@ -83,6 +118,9 @@
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 5px;
+    @include sm-block{
+      font-size: 18px;
+    }
   }
 
   &__txt {

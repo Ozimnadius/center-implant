@@ -5,6 +5,10 @@
   @include lg-block{
     padding-top: 70px;
   }
+  @include sm-block{
+    padding-top: 35px;
+    padding-bottom: 40px;
+  }
 
   .container{
     max-width: 660px;
@@ -19,12 +23,20 @@
       font-size: 32px;
       max-width: 479px;
     }
+    @include sm-block{
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
   }
 
   &__sub{
     max-width: 1180px;
     font-size: 24px;
     margin-bottom: 65px;
+    @include sm-block{
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
   }
 
   &__grid{
@@ -34,6 +46,14 @@
     @include to(1400px){
         grid-template-columns: 1fr;
     }
+    @include sm-block{
+      margin-right: -10px;
+      margin-left: -10px;
+      padding: 0 10px;
+      grid-template-columns: repeat(2,292px);
+      grid-gap: 10px;
+      overflow-x: auto;
+    }
   }
 }
 
@@ -42,14 +62,26 @@
   background-color: $bg;
   padding: 55px;
   position: relative;
+  @include sm-block{
+    padding: 25px 20px 0 20px;
+    display: flex;
+    flex-direction: column;
+  }
 
   &__bg{
     position: absolute;
     bottom: 0;
     right: 20px;
+    @include sm-block{
+      order: 1;
+      position: static;
+    }
 
     img{
       display: block;
+      @include sm-block{
+        width: 227px;
+      }
     }
   }
 
@@ -57,6 +89,14 @@
     position: absolute;
     bottom: 60px;
     right: 3px;
+    @include sm-block{
+      bottom: 40px;
+      right: 20px;
+    }
+    @include tr;
+    &:hover{
+      opacity: .8;
+    }
 
     &-name{
       display: block;
@@ -93,9 +133,13 @@
     align-items: center;
     color: #4f4f4f;
     margin-bottom: 45px;
+    @include sm-block{
+      margin-bottom: 10px;
+    }
 
     &:before{
       content: '';
+      flex-shrink: 0;
       display: block;
       width: 15px;
       height: 15px;
@@ -107,6 +151,9 @@
 
   &__prof{
     margin-bottom: 15px;
+    @include sm-block{
+      margin-bottom: 10px;
+    }
   }
 
   &__name{
@@ -114,10 +161,16 @@
     font-weight: 700;
     line-height: lh(24,30);
     margin-bottom: 15px;
+    @include sm-block{
+      font-size: 20px;
+    }
   }
 
   &__age{
     margin-bottom: 30px;
+    @include sm-block{
+      margin-bottom: 20px;
+    }
   }
 
   &__imgs{

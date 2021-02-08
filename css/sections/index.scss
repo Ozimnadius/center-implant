@@ -29,10 +29,16 @@
     @include lg-block{
       padding-bottom: 0;
     }
+    @include sm-block{
+      padding-top: 30px;
+    }
   }
 
   &__cert {
     margin-bottom: 90px;
+    @include sm-block{
+      margin-bottom: 35px;
+    }
   }
 
   &__map {

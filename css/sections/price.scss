@@ -1,43 +1,56 @@
-.price{
+.price {
   background-color: #eef2f4;
   margin-top: -150px;
   padding-top: 180px;
   padding-bottom: 180px;
-  @include lg-block{
+  @include lg-block {
     margin-top: -252px;
     padding-bottom: 90px;
   }
+  @include sm-block {
+    margin-top: -430px;
+    padding-top: 275px;
+  }
 
-  &__title{
+  &__title {
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 20px;
-  }
-
-  &__sub{
-    font-size: 24px;
-    margin-bottom: 55px;
-    @include lg-block{
-      font-size: 22px;
+    @include sm-block {
+      font-size: 24px;
+      text-align: center;
     }
   }
 
-  &__company{
+  &__sub {
+    font-size: 24px;
     margin-bottom: 55px;
-    @include lg-block{
+    @include lg-block {
+      font-size: 22px;
+    }
+    @include sm-block {
+      font-size: 16px;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__company {
+    margin-bottom: 55px;
+    @include lg-block {
       margin-bottom: 30px;
     }
   }
 
-  &__slider{
+  &__slider {
     position: relative;
     padding: 0 50px;
-    @include lg-block{
+    @include lg-block {
       padding: 0;
     }
   }
 
-  &__nav{
+  &__nav {
     position: absolute;
     top: 50%;
     margin-top: -50px;
@@ -48,53 +61,94 @@
     pointer-events: none;
   }
 
-  &__btn{
+  &__btn {
     pointer-events: all;
+    @include tr;
+    &:hover{
+      opacity: .8;
+    }
   }
 
 }
 
-.pcomp{
+.pcomp {
   display: grid;
-  grid-template-columns: repeat(7,1fr);
+  grid-template-columns: repeat(7, 1fr);
   grid-gap: 20px;
-  @include lg-block{
-      grid-gap: 10px;
+  @include lg-block {
+    grid-gap: 10px;
+  }
+  @include sm-block {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0;
+    &.open{
+      .pcomp__item{
+        display: flex;
+      }
+    }
   }
 
-  &__item{
+  &__item {
     height: 58px;
     border-radius: 63px;
     border: 4px solid #bdbdbd;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    position: relative;
     color: #828282;
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
 
-    @include lg-block{
+    @include lg-block {
       height: 40px;
 
     }
+    @include sm-block{
+      border-radius: 10px;
+      border-width: 1px;
+      height: 60px;
+      font-size: 16px;
+      display: none;
+    }
 
-    &.active{
+    &.active {
       border-color: $btn;
       color: $btn;
+      @include sm-block{
+        background: $btn;
+        color: $bg;
+        order: -1;
+        display: flex;
+        &:after {
+          content: '';
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 8px 5px 0 5px;
+          border-color: $bg transparent transparent transparent;
+          position: absolute;
+          top: 50%;
+          margin-top: -4px;
+          right: 25px;
+        }
+      }
+
+
     }
   }
 }
 
-.pslide{
+.pslide {
   border-radius: 20px;
   background-color: $bg;
   padding: 35px 30px;
   position: relative;
   box-sizing: border-box;
 
-  &__action{
+  &__action {
     background-color: $green;
     width: 101px;
     position: absolute;
@@ -116,47 +170,47 @@
 
   }
 
-  &__logo{
+  &__logo {
     display: flex;
     align-items: center;
     margin-bottom: 50px;
 
-    img{
+    img {
       margin-right: 15px;
     }
   }
 
-  &__comp{
+  &__comp {
     color: #000000;
     font-size: 18px;
     font-weight: 700;
   }
 
-  &__list{
+  &__list {
     margin-bottom: 20px;
   }
 
-  &__item{
+  &__item {
     border-bottom: 1px solid #e0e0e0;
   }
 
-  &__bottom{
+  &__bottom {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
   }
 
-  &__sub{
+  &__sub {
     font-weight: 700;
   }
 
-  &__old{
+  &__old {
     color: #828282;
     text-decoration: line-through;
     margin-right: 7px;
   }
 
-  &__new{
+  &__new {
     color: $btn;
     font-size: 22px;
     font-weight: 700;
@@ -164,38 +218,38 @@
 
 }
 
-.psitem{
+.psitem {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 0;
 
-  &__title{
+  &__title {
     color: #4f4f4f;
     font-size: 14px;
     margin-right: 20px;
   }
 
-  &__prices{
+  &__prices {
     white-space: nowrap;
     text-align: right;
   }
 
-  &__old{
+  &__old {
     color: #828282;
     font-size: 14px;
     text-decoration: line-through;
   }
 
-  &__new{
+  &__new {
     font-size: 16px;
     font-weight: 700;
   }
 
-  &__txt{
+  &__txt {
     font-size: 14px;
 
-    &_red{
+    &_red {
       color: $btn;
     }
   }

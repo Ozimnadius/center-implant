@@ -31,6 +31,8 @@
 
     });
 
+
+
     //FAQ
     let faqs = $('.jsFaq');
 
@@ -54,6 +56,7 @@
         slidesPerView: '1',
         spaceBetween: 20,
         watchSlidesVisibility: true,
+        allowTouchMove: false,
         slideVisibleClass: 'pslide_visible',
         // Navigation arrows
         navigation: {
@@ -74,26 +77,39 @@
             // when window width is >= 768px
             768: {
                 slidesPerView: 2,
-                spaceBetween: 20
+                spaceBetween: 20,
+                allowTouchMove: true,
             },
             // when window width is >= 480px
             1200: {
                 slidesPerView: '3',
                 spaceBetween: 20,
+                allowTouchMove: true,
             },
         }
     });
 
     window.swiperPrice = swiperPrice;
 
-    $('.pcomp__item').on('click', function (e) {
+    let pcomp = $('.pcomp'),
+        pcompSw = pcomp.find('.pcomp__item');
+
+    pcompSw.on('click', function (e) {
+        let sw = $(this);
+
+        if(sw.hasClass('active')){
+            pcomp.toggleClass('open');
+        } else{
+            pcomp.removeClass('open');
+        }
+
         swiperPrice.slideTo(this.dataset.id);
     });
 
 
     const resultsSwiperThumbs = new Swiper('.rthumbs__container', {
-        spaceBetween: 20,
-        slidesPerView: 3,
+        spaceBetween: 10,
+        slidesPerView: 2.5,
         watchSlidesVisibility: true,
         breakpoints: {
             // when window width is >= 768px
@@ -142,6 +158,7 @@
     });
 
     const weSwiper = new Swiper('.we__container', {
+        loop: true,
         slidesPerView: 1.5,
         autoplay: {
             delay: 5000,

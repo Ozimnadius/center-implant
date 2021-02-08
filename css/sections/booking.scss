@@ -8,6 +8,12 @@
   @include lg-block {
     padding: 25px 125px 25px 280px;
   }
+  @include sm-block{
+    padding: 45px 45px 170px 45px;
+    background-position: center bottom;
+    text-align: center;
+    border-radius: 10px;
+  }
 
   &__grid {
     display: grid;
@@ -18,12 +24,20 @@
       grid-template-columns: 1fr;
       grid-gap: 15px;
     }
+    @include sm-block{
+        justify-items: center;
+      grid-gap: 25px;
+    }
   }
 
   &__title {
     color: $bg;
     font-size: 24px;
     font-weight: 700;
+    @include sm-block{
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
   }
 
   &__txt {
@@ -50,6 +64,10 @@
     font-weight: 700;
     @include lg-block{
       width: 195px;
+    }
+    @include tr;
+    &:hover{
+      background: #fbc1bc;
     }
   }
 

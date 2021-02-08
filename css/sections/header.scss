@@ -45,6 +45,10 @@
 
   &__call {
     text-decoration: underline;
+    @include tr;
+    &:hover{
+      color: $btn;
+    }
   }
 
 }
@@ -67,7 +71,12 @@
 .tel {
   font-size: 24px;
   font-weight: 700;
+  @include tr;
   @include lg-block {
     font-size: 18px;
+  }
+
+  &:hover{
+    color: $btn;
   }
 }

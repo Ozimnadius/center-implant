@@ -131,11 +131,11 @@ block content
                                             .stitem
                                                 .stitem__img
                                                     +image('images/content/steps/img.jpg')
-                                                .sitem__txt Сразу после удаления зуба
+                                                .stitem__txt Сразу после удаления зуба
                                             .stitem
                                                 .stitem__img
                                                     +image('images/content/steps/img.jpg')
-                                                .sitem__txt Когда не нужно наращивать костную ткань
+                                                .stitem__txt Когда не нужно наращивать костную ткань
                                             .stitem
                                                 .stitem__img-big
                                                     +image('images/content/steps/img-big.jpg')
@@ -416,7 +416,7 @@ block content
                                                                         | срок лечения
 
                                                                     .dslide__grid
-                                                                        .dslide__col
+                                                                        div(data-title='Проблема').dslide__col
                                                                             .dslide__block
                                                                                 button(type='button').dslider__prev.dslide__btn
                                                                                     <svg width="25" height="50" viewBox="0 0 25 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -430,7 +430,12 @@ block content
                                                                             ul.dslide__ul
                                                                                 each j in ['Не нравилось, как выглядели зубы','Отсутствие зубов в жевательном отделе челюсти','Физический и моральной дискомфорт']
                                                                                     li.dslide__li.li= j
-                                                                        .dslide__col
+                                                                        .dslide__col.dslide__col_sm
+                                                                            .dslide__week.dslide__week_sm
+                                                                                | 2 недели
+                                                                                br
+                                                                                | срок лечения
+                                                                        div(data-title='Решение и результат').dslide__col
                                                                             .dslide__block
                                                                                 .dslide__img
                                                                                     +image('images/content/docs/after.jpg')

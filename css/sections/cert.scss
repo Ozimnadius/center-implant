@@ -5,11 +5,12 @@
   border-radius: 20px;
   overflow: hidden;
   color: $bg;
-
-
   @include lg-block {
     background: linear-gradient(99.24deg, #2A8277 -0.01%, #082C34 100.01%);
     padding: 55px 70px 60px 30px;
+  }
+  @include sm-block{
+    padding: 45px 30px;
   }
 
   &__grid {
@@ -24,6 +25,13 @@
       grid-gap: 20px 75px;
       margin-bottom: 40px;
     }
+    @include sm-block{
+      grid-template-columns: 1fr;
+        grid-template-areas: 'title' 'sub' 'list' 'img';
+      grid-gap: 25px;
+      margin-bottom: 30px;
+    }
+
   }
 
   &__title {
@@ -34,11 +42,17 @@
     @include lg-block {
       font-size: 28px;
     }
+    @include sm-block{
+      font-size: 20px;
+    }
   }
 
   &__sub {
     grid-area: sub;
     color: #dee5e9;
+    @include sm-block{
+      font-size: 16px;
+    }
   }
 
   &__list {
@@ -50,6 +64,10 @@
       grid-template-columns: 1fr;
       grid-gap: 25px;
       padding-right: 50px;
+    }
+    @include sm-block{
+      padding-right: 0;
+      grid-gap: 20px;
     }
   }
 
@@ -71,12 +89,19 @@
     @include lg-block {
       align-self: flex-start;
     }
+    @include sm-block{
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__txt {
     color: #dee5e9;
     font-size: 18px;
     font-weight: 600;
+    @include sm-block{
+      font-size: 16px;
+    }
   }
 
 }
