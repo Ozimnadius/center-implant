@@ -77,6 +77,10 @@
       border-radius: 50%;
       overflow: hidden;
 
+      img{
+        width: 100%;
+      }
+
       @include lg-block {
         width: 56px;
         height: 56px;
@@ -144,16 +148,22 @@
     }
   }
 
-  &__tabs {
+  &__items {
     position: relative;
     z-index: 20;
   }
 
   &__tab {
-    display: none;
+    //display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
 
     &.active {
-      display: block;
+      //display: block;
+      opacity: 1;
     }
   }
 }

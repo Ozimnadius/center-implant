@@ -2970,6 +2970,9 @@ input, textarea {
   border-radius: 50%;
   overflow: hidden;
 }
+.docs__sw-img img {
+  width: 100%;
+}
 @media screen and (max-width: 1199.98px) {
   .docs__sw-img {
     width: 56px;
@@ -3038,15 +3041,19 @@ input, textarea {
     border-width: 4px;
   }
 }
-.docs__tabs {
+.docs__items {
   position: relative;
   z-index: 20;
 }
 .docs__tab {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
 }
 .docs__tab.active {
-  display: block;
+  opacity: 1;
 }
 
 .dtab {

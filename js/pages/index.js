@@ -195,6 +195,22 @@
 
     }
 
+    function setDocsHeight(){
+        let $tabs = $('.docs__tab');
+        let maxHeight = 0;
+        $tabs.each(function (x,i){
+            let h =$(i).outerHeight();
+            if(maxHeight<h){
+                maxHeight = h;
+            }
+        });
+
+        $('.docs__items').css('height', maxHeight+'px');
+
+    }
+
+    setDocsHeight();
+
     //POPUP
     let popup = new Popup();
     $('.jsCall').on('click', function (e){
