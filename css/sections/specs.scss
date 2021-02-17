@@ -11,7 +11,10 @@
   }
 
   .container{
-    max-width: 660px;
+    @include lg-block{
+      max-width: 660px;
+    }
+
   }
 
   &__title{

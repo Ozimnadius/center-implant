@@ -3576,8 +3576,10 @@ input, textarea {
     padding-bottom: 40px;
   }
 }
-.specs .container {
-  max-width: 660px;
+@media screen and (max-width: 1199.98px) {
+  .specs .container {
+    max-width: 660px;
+  }
 }
 .specs__title {
   max-width: 693px;
